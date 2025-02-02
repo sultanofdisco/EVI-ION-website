@@ -17,10 +17,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
-          cache-dependency-path: evison-backend/package-lock.json
 
-      - name: 이동 후 의존성 설치
+      - name: 의존성 설치
         run: |
           cd evison-backend
           npm install
