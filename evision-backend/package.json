@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"Test 실행됨\""
+  "test": "echo \"Test 실행됨\"",
+  "start": "node server.js"
   },
   "keywords": [],
   "author": "",
