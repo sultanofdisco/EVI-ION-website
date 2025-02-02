@@ -1,0 +1,31 @@
+name: Deploy Backend (Windows)
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 push될 때 실행
+
+jobs:
+  deploy:
+    runs-on: windows-latest # Windows 환경에서 실행
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v3
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 의존성 설치
+        run: npm install
+        working-directory: evison-backend # 백엔드 폴더에서 실행
+
+      - name: 테스트 실행
+        run: npm test
+        working-directory: evison-backend
+
+      - name: 서버 실행
+        run: npm start
+        working-directory: evison-backend
