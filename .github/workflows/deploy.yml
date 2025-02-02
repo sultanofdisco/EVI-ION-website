@@ -16,9 +16,9 @@ jobs:
       - name: 작업 디렉토리 확인 (디버깅)
         run: |
           echo "현재 디렉토리:"
-          pwd
+          Get-Location
           echo "디렉토리 목록:"
-          ls -la
+          Get-ChildItem -Force
 
       - name: Node.js 설정
         uses: actions/setup-node@v3
