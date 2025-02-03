@@ -4,15 +4,6 @@ const prisma = new PrismaClient();
 export const postApply = async (req, res) => {
     const { student_number, name, phone_number, email, A1, A2 } = req.body;
 
-    if (!student_number || !name || !phone_number || !email || !A1 || !A2) {
-        return res.status(400).send(`
-            <script>
-                alert('모든 필드를 입력해야 합니다.');
-                window.history.back();
-            </script>
-        `);
-    }
-
     try {
         const applicant = await prisma.applicant.create({
             data: { student_number, name, phone_number, email, A1, A2 }
