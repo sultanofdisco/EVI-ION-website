@@ -9,3 +9,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+//안녕하세요요
