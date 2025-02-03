@@ -18,7 +18,6 @@ export const getApplicants = async (req, res) => {
             orderBy: { createdAt: 'asc' } // **지원서를 먼저 제출한 순서대로 정렬**
         });
         res.render('admin', {applicants});
-        res.status(200).json(applicants);
     } catch (error) {
         console.error('지원자 목록 조회 실패:', error);
 
