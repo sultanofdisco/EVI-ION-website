@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import middleware from './middlewares/middleware.js';// 미들웨어 파일 분리
 import ejs from 'ejs';
+import bodyParser from "body-parser";
 
 // 🔹 라우트 불러오기
 import applyRoutes from './routes/apply.js';
@@ -15,8 +16,12 @@ dotenv.config(); // .env 파일 불러오기
 const app = express();
 
 // 뷰 엔진 설정 추가
+app.use(express.json()); // JSON 데이터를 올바르게 처리할 수 있도록 추가
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set('view engine', 'ejs');
 app.set('views', './views'); // 'views' 폴더를 템플릿 디렉토리로 설정
+
 
 // 🔹 미들웨어 설정 (외부 파일로 분리)
 middleware(app);
