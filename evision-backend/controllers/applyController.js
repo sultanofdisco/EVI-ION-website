@@ -1,4 +1,4 @@
-const getApplyPage = (req, res) => {
+const getApplyPage = async (req, res) => {
 
 }
 

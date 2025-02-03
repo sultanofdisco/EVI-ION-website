@@ -1,4 +1,4 @@
-const getMainPage = (req, res) => {
+const getMainPage = async (req, res) => {
 
 }
 

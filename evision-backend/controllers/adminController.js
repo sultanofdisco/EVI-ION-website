@@ -1,4 +1,4 @@
-const getAdminPage = (req, res) => {
+const getAdminPage = async (req, res) => {
 
 }
 

@@ -1,4 +1,4 @@
-const postApply = (req, res) => {
+const postApply = async (req, res) => {
 
 }
 
