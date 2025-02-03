@@ -1,7 +1,8 @@
 const express = require('express');
-const { getAdminPage } = require('../controllers/adminController');
+const { getApplicants } = require('../controllers/adminController');
+
 const router = express.Router();
 
-router.get('/', getAdminPage);
+router.get('/applicants', getApplicants); // 지원자 목록 조회
 
 module.exports = router;
