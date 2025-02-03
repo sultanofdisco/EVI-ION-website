@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import middleware from './middleware.js'; // 미들웨어 파일 분리
+import middleware from './middlewares/middleware.js';// 미들웨어 파일 분리
 
 // 🔹 라우트 불러오기
 import applyRoutes from './routes/apply.js';
