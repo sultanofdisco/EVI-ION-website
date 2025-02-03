@@ -1,13 +1,14 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import middleware from './middleware.js'; 
 
 // 🔹 라우트 불러오기
-const applyRoutes = require('./routes/apply');
-const applyProcRoutes = require('./routes/applyProc'); // 새로 추가된 라우트
-const adminRoutes = require('./routes/admin');
-const mainRoutes = require('./routes/main');
-const recruitingRoutes = require('./routes/recruiting');
+import applyRoutes from './routes/apply.js';
+import applyProcRoutes from './routes/applyProc.js'; // 새로 추가된 라우트
+import adminRoutes from './routes/admin.js';
+import mainRoutes from './routes/main.js';
+import recruitingRoutes from './routes/recruiting.js';
 
 dotenv.config(); // .env 파일 불러오기
 const app = express();

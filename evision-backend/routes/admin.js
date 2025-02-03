@@ -1,5 +1,5 @@
-const express = require('express');
-const { getApplicants } = require('../controllers/adminController');
+import express from 'express';
+import { getApplicants } from '../controllers/adminController.js';
 
 const router = express.Router();
 

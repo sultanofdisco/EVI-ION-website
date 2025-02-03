@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 // 🔹 지원자 목록 조회 API (GET /admin/applicants) - 오래된 순서대로 정렬

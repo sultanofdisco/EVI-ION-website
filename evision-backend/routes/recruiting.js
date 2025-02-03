@@ -1,5 +1,5 @@
-const express = require('express');
-const { getRecruitingPage } = require('../controllers/recruitingController');
+import express from 'express';
+import { getRecruitingPage } from '../controllers/recruitingController.js';
 const router = express.Router();
 
 router.get('/', getRecruitingPage);
