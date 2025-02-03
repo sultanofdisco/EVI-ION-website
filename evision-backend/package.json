@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "dev": "nodemon server.js",
-  "start": "node server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +12,15 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^5.4.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "is-uuid": "^1.0.2",
     "prisma": "^5.4.2",
     "superstruct": "^1.0.3"
-  },"devDependencies": {
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   },
   "type": "module"

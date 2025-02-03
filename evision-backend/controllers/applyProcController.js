@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-const postApply = async (req, res) => {
+export const postApply = async (req, res) => {
     const { student_number, name, phone_number, email, A1, A2 } = req.body;
 
     if (!student_number || !name || !phone_number || !email || !A1 || !A2) {
@@ -33,5 +33,3 @@ const postApply = async (req, res) => {
         `);
     }
 }
-
-module.exports = { postApply };

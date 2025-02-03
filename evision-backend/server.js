@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import middleware from './middlewares/middleware.js';// 미들웨어 파일 분리
+import ejs from 'ejs';
 
 // 🔹 라우트 불러오기
 import applyRoutes from './routes/apply.js';
@@ -12,6 +13,10 @@ import recruitingRoutes from './routes/recruiting.js';
 
 dotenv.config(); // .env 파일 불러오기
 const app = express();
+
+// 뷰 엔진 설정 추가
+app.set('view engine', 'ejs');
+app.set('views', './views'); // 'views' 폴더를 템플릿 디렉토리로 설정
 
 // 🔹 미들웨어 설정 (외부 파일로 분리)
 middleware(app);

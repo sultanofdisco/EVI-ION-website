@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 // 🔹 지원자 목록 조회 API (GET /admin/applicants) - 오래된 순서대로 정렬
-const getApplicants = async (req, res) => {
+export const getApplicants = async (req, res) => {
     try {
         const applicants = await prisma.applicant.findMany({
             select: {
@@ -32,4 +32,4 @@ const getApplicants = async (req, res) => {
     }
 };
 
-module.exports = { getApplicants };
+export default { getApplicants };
