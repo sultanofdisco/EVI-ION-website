@@ -20,7 +20,7 @@ const getApplicants = async (req, res) => {
 
         res.status(200).json(applicants);
     } catch (error) {
-        console.error('❌ 지원자 목록 조회 실패:', error);
+        console.error('지원자 목록 조회 실패:', error);
 
         // 클라이언트에서 alert 창을 띄운 후, 홈(`/`)으로 이동
         res.status(500).send(`
