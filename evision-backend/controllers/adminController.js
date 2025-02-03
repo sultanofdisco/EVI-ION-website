@@ -24,7 +24,7 @@ const getApplicants = async (req, res) => {
         res.status(500).send(`
             <script>
                 alert('데이터 조회에 실패하였습니다. 다시 시도해주세요.');
-                window.location.href = '/';
+                window.location.href = '/main';
             </script>
         `);
     }
