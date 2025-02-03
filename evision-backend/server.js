@@ -4,6 +4,7 @@ const cors = require('cors');
 
 // 🔹 라우트 불러오기
 const applyRoutes = require('./routes/apply');
+const applyProcRoutes = require('./routes/applyProc'); // 새로 추가된 라우트
 const adminRoutes = require('./routes/admin');
 const mainRoutes = require('./routes/main');
 const recruitingRoutes = require('./routes/recruiting');
@@ -15,11 +16,12 @@ const app = express();
 app.use(express.json()); // JSON 요청을 파싱하도록 설정
 app.use(cors()); // CORS 허용 (프론트엔드와 연결할 때 필요)
 
-// 🔹 API 라우트 등록
-app.use('/api/apply', applyRoutes);       // 지원 관련 API
-app.use('/api/admin', adminRoutes);       // 관리자 관련 API
-app.use('/api/main', mainRoutes);         // 메인 페이지 관련 API
-app.use('/api/recruiting', recruitingRoutes); // 모집 관련 API
+// 🔹 API 라우트 등록 (경로에서 `/api` 제거)
+app.use('/apply', applyRoutes);          // 지원 관련 API
+app.use('/applyProc', applyProcRoutes);  // 지원 프로세스 관련 API
+app.use('/admin', adminRoutes);          // 관리자 관련 API
+app.use('/main', mainRoutes);            // 메인 페이지 관련 API
+app.use('/recruiting', recruitingRoutes);// 모집 관련 API
 
 // 🔹 기본 라우트 (서버 상태 확인용)
 app.get('/', (req, res) => {
