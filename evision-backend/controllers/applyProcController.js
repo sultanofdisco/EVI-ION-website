@@ -20,7 +20,7 @@ const postApply = async (req, res) => {
         res.status(201).send(`
             <script>
                 alert('지원서 제출 완료');
-                window.location.href = '/main';
+                window.location.href = '/';
             </script>
         `);
     } catch (error) {

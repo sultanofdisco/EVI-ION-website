@@ -20,7 +20,7 @@ app.use(cors()); // CORS 허용 (프론트엔드와 연결할 때 필요)
 app.use('/apply', applyRoutes);          // 지원 관련 API
 app.use('/applyProc', applyProcRoutes);  // 지원 프로세스 관련 API
 app.use('/admin', adminRoutes);          // 관리자 관련 API
-app.use('/main', mainRoutes);            // 메인 페이지 관련 API
+app.use('/', mainRoutes);            // 메인 페이지 관련 API
 app.use('/recruiting', recruitingRoutes);// 모집 관련 API
 
 // 🔹 기본 라우트 (서버 상태 확인용)
