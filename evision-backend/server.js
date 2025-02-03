@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import middleware from './middleware.js'; 
+import middleware from './middleware.js'; // 미들웨어 파일 분리
 
 // 🔹 라우트 불러오기
 import applyRoutes from './routes/apply.js';
@@ -13,9 +13,8 @@ import recruitingRoutes from './routes/recruiting.js';
 dotenv.config(); // .env 파일 불러오기
 const app = express();
 
-// 🔹 미들웨어 설정
-app.use(express.json()); // JSON 요청을 파싱하도록 설정
-app.use(cors()); // CORS 허용 (프론트엔드와 연결할 때 필요)
+// 🔹 미들웨어 설정 (외부 파일로 분리)
+middleware(app);
 
 // 🔹 API 라우트 등록 (경로에서 `/api` 제거)
 app.use('/apply', applyRoutes);          // 지원 관련 API
@@ -27,12 +26,6 @@ app.use('/recruiting', recruitingRoutes);// 모집 관련 API
 // 🔹 기본 라우트 (서버 상태 확인용)
 app.get('/', (req, res) => {
     res.send('🚀 EVI-ION 백엔드 서버가 정상적으로 실행 중입니다!');
-});
-
-// 🔹 에러 처리 미들웨어 (전역 오류 핸들링)
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ message: '서버 내부 오류 발생' });
 });
 
 // 🔹 서버 실행
