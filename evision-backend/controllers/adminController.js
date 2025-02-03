@@ -18,7 +18,15 @@ const getApplicants = async (req, res) => {
 
         res.status(200).json(applicants);
     } catch (error) {
-        res.status(500).json({ message: "서버 오류 발생", error: error.message });
+        console.error('❌ 지원자 목록 조회 실패:', error);
+
+        // 클라이언트에서 alert 창을 띄운 후, 홈(`/`)으로 이동
+        res.status(500).send(`
+            <script>
+                alert('데이터 조회에 실패하였습니다. 다시 시도해주세요.');
+                window.location.href = '/';
+            </script>
+        `);
     }
 };
 
