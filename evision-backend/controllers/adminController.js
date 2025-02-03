@@ -9,6 +9,8 @@ const getApplicants = async (req, res) => {
                 id: true,              // 지원자 ID
                 name: true,            // 이름
                 student_number: true,  // 학번
+                phone_number: true,    // 전화번호 (새로 추가됨)
+                email: true,           // 이메일 (새로 추가됨)
                 A1: true,              // 지원 동기 1
                 A2: true,              // 지원 동기 2
                 createdAt: true        // 지원 날짜
