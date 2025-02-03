@@ -17,6 +17,8 @@ model Applicant {
   id             String   @id @default(uuid())
   name           String
   student_number String
+  phone_number   String
+  email          String
   A1             String
   A2             String
   createdAt      DateTime @default(now())
