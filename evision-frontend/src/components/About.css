@@ -1,0 +1,41 @@
+.about-section {
+  color: white;
+  padding: 50px 20px; /* 이 부분을 일정하게 해야 이동이 일정 */
+  text-align: left;
+  font-family: "Krona One", sans-serif;
+  max-width: 1500px;
+  margin: 350px auto 0 auto;  /* 상단에 100px 여백 추가 */
+}
+
+.about-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 0;    /* 왼쪽 여백 제거로 텍스트 정렬 */
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;        /* 불필요한 마진 제거 */
+  padding: 0;       /* 패딩도 제거 */
+  text-align: left; /* 왼쪽 정렬 유지 */
+  white-space: pre-line; /* 마침표로 줄바꿈 유지 */
+}
+
+.instagram-link {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: left; /* 인스타그램 링크도 왼쪽 정렬 */
+}
+
+.instagram-link:hover {
+  color: #1eb46c;
+  border-color: #1eb46c;
+}

@@ -1,0 +1,92 @@
+.header {
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 10px;
+  transform: translateX(-335px) translateY(-2px) rotate(-35.51deg) scale(0.85);
+}
+
+.logo-text a {
+  text-decoration: none;
+  color: white;
+  font-family: "Krona One", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-left: 10%;
+}
+
+.nav {
+  display: flex;      
+  align-items: center;      
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;    
+  padding: 0;
+  margin-top: 1%;
+}
+
+.nav ul li {
+  display: flex;
+  align-items: center;   
+  margin: 0 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;        
+  height: 40px;            
+  line-height: 40px;        
+}
+
+.nav ul li a:hover {
+  color: #349e40;
+}
+
+.recruiting-wrapper {
+  display: flex;
+  align-items: center;   
+  height: 40px;            
+}
+
+.recruiting-btn {
+  display: flex;
+  align-items: center;        
+  justify-content: center;
+  padding: 8px 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 40px;              
+  box-sizing: border-box;
+  line-height: 1;           
+}
+
+.recruiting-btn:hover {
+  background-color: #349e40;
+  color: black;
+  border-color: #349e40;
+}

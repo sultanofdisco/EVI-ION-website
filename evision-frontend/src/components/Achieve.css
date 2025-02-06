@@ -1,0 +1,88 @@
+.achieve-section {
+  color: white;
+  padding: 50px 20px;
+  font-family: "Krona One", sans-serif;
+  max-width: 1500px;
+  margin: 350px auto 0 auto;
+}
+
+.achieve-section h2 {
+  font-size: 40px;
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 300px;
+  margin-right: -290px;
+  padding-bottom: 43%;
+}
+
+.timeline {
+  position: relative;
+  border-right: 4px solid white;
+  padding-right: 20px;
+  margin-right: 50px;
+  margin-top: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.event {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* 동그라미 위치 조정하고 싶으면 여기 */
+.event::before {
+  content: '';
+  position: absolute;
+  right: -28px; /* 선과의 수평 위치 */
+  top: 0;       /* 수직 위치 */
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.event.right {
+  text-align: left;
+  padding-left: 60px;
+  position: relative;
+  left: 100%;
+}
+
+.event.left {
+  text-align: right;
+  padding-left: 60px;
+  position: relative;
+  right: 4%;
+}
+
+.event.right::before {
+  right: 95.13%; /* 오른쪽 항목만 따로 조정 */
+  top: 45%;
+}
+
+.event.left::before {
+  right:-8.85%; /* 왼쪽 항목만 따로 조정 */
+  top: 13%;
+}
+
+/* Custom adjustments for 2023 and 2024 */
+.custom-2023::before {
+  top: 35% !important; 
+}
+
+.custom-2024::before {
+  top: 36% !important; 
+}
+
+.year {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 4%;
+  padding-top: 10%;
+}
+
+.details p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
