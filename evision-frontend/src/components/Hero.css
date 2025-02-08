@@ -9,19 +9,19 @@
 .hero h2 {
   font-family: "Krona One", sans-serif;
   font-size: 100px;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: 145px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
   letter-spacing: 2px;
 }
 
 .hero img {
-  width: 170%;
-  height: 170%;
+  width: 150%;
+  height: 150%;
   opacity: 0.3;
   position: absolute;
-  top: 70%;
+  top: 88%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;

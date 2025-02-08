@@ -1,0 +1,72 @@
+.activity-section {
+  color: white;
+  padding: 50px 20px;
+  font-family: "Krona One", sans-serif;
+  max-width: 1500px;
+  margin: -500px auto 0 auto;
+  text-align: left;
+}
+
+.activity-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-left: 2.8%;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.activity-slider {
+  display: flex;
+  gap: 60px;
+  overflow-x: hidden;
+  width: 1200px;
+  max-width: 1300px;
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+.activity-box {
+  flex: 0 0 400px;
+  height: 380px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.first-box {
+  margin-left: 20px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 15px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-button.left {
+  left: 0px;
+}
+
+.slider-button.right {
+  right: 2px;
+}

@@ -4,15 +4,16 @@
   font-family: "Krona One", sans-serif;
   max-width: 1500px;
   margin: 350px auto 0 auto;
+  margin-top: 100px;
 }
 
 .achieve-section h2 {
   font-size: 40px;
   text-align: right;
   font-weight: bold;
-  margin-bottom: 300px;
-  margin-right: -290px;
-  padding-bottom: 43%;
+  margin-bottom: 460px;
+  margin-right: -230px;
+  padding-bottom: 47%;
 }
 
 .timeline {
@@ -56,22 +57,22 @@
 }
 
 .event.right::before {
-  right: 95.13%; /* 오른쪽 항목만 따로 조정 */
-  top: 45%;
+  right: 94.85%; /* 오른쪽 항목만 따로 조정 */
+  top: 44%;
 }
 
 .event.left::before {
-  right:-8.85%; /* 왼쪽 항목만 따로 조정 */
-  top: 13%;
+  right:-9.2%; /* 왼쪽 항목만 따로 조정 */
+  top: 12%;
 }
 
 /* Custom adjustments for 2023 and 2024 */
 .custom-2023::before {
-  top: 35% !important; 
+  top: 28% !important; 
 }
 
 .custom-2024::before {
-  top: 36% !important; 
+  top: 14% !important; 
 }
 
 .year {
@@ -82,7 +83,8 @@
 }
 
 .details p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin: 8px 0;
+  font-family: 'Pretendard', sans-serif;
 }

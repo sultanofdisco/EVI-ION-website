@@ -15,10 +15,12 @@
 }
 
 .about-section p {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 22px;
+  font-family:'Pretendard', sans-serif;
+  font-weight: bold;
+  line-height: 2; /* 글자 간 간격 */
   margin: 0;        /* 불필요한 마진 제거 */
-  padding: 0;       /* 패딩도 제거 */
+  padding: 10px;       /* 패딩도 제거 */
   text-align: left; /* 왼쪽 정렬 유지 */
   white-space: pre-line; /* 마침표로 줄바꿈 유지 */
 }
@@ -31,11 +33,51 @@
   border-bottom: 2px solid white;
   transition: color 0.3s ease, border-color 0.3s ease;
   font-size: 20px;
-  margin-top: 20px;
-  text-align: left; /* 인스타그램 링크도 왼쪽 정렬 */
+  margin-top: 60px;
+  margin-left: 700px;
 }
 
 .instagram-link:hover {
   color: #1eb46c;
   border-color: #1eb46c;
+}
+
+.about-section p:nth-of-type(1) {
+  color: #1d903e;
+  font-size: 30px;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
+}
+.tag-container {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
+}
+
+.tag {
+  display: inline-block;
+  padding: 10px 40px;
+  border: 2px solid white;
+  border-radius: 20px; /* 둥근 모서리 */
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background: transparent;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease-in-out;
 }

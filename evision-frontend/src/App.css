@@ -36,3 +36,7 @@ html, body {
   align-items: center;
   padding: 20px 0;
 }
+
+#about, #achieve, #activity, #faq {
+  scroll-margin-top: 100px; /* 100px만큼 위쪽 여백 추가 */
+}

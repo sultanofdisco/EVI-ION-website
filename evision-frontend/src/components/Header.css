@@ -1,9 +1,23 @@
 .header {
   width: 80%;
   height: 80px;
-  margin: 0 auto;
+  position: fixed;
+  margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  z-index: 80;
+}
+
+@media (max-width: 100px) {
+  .header {
+    display: none;
+  }
+}
+
+.logo-container {
+  display: flex;
   align-items: center;
 }
 
@@ -11,18 +25,17 @@
   height: 55px;
   width: auto;
   object-fit: contain;
-  margin-right: 10px;
-  transform: translateX(-335px) translateY(-2px) rotate(-35.51deg) scale(0.85);
+  margin-right: 10px; /* 로고와 텍스트 사이 간격 조정 */
+  transform: rotate(-35.51deg) scale(0.85); /* 기존 transform 제거 */
 }
 
-.logo-text a {
+.logo-text {
   text-decoration: none;
   color: white;
   font-family: "Krona One", sans-serif;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 2px;
-  margin-left: 10%;
 }
 
 .nav {
