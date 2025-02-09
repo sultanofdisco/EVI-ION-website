@@ -1,0 +1,9 @@
+.ImageWrap {
+    text-align: center;
+    margin-top: 120px;
+  }
+  
+img {
+    width: 76px; /* 이미지 크기 조정 */
+    height: auto;
+  }
