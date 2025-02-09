@@ -1,12 +1,12 @@
 
 
 .Form{
-    
     margin: 50px 50px auto;
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10px;
+    
 }
 
 .ApplyHeader {
@@ -15,11 +15,13 @@
     flex-direction: column;
     width: 100%;
     padding: 10px;
+    margin-bottom: -50px;
 }
 
 .ApplyHeader > h1{
     color: white;
-    font-size: 80px;
+    font-size: clamp(20px, 8vw, 80px);
+    
     font-family: Pretendard;
     text-align: left;
     font-weight: 700;
@@ -31,11 +33,12 @@
 .Form > h3 {
     text-align: left;
     color: white;
-    font-size: 35px;
+    font-size: 3.5vw;
+    font-size: clamp(10px, 3vw, 35px);
     font-family: Pretendard;
     font-weight: 700;
     line-height: 16px;
-    letter-spacing: 0.20px;
+    letter-spacing: 1px;
     word-wrap: break-word;
 }
 
@@ -48,34 +51,49 @@
 
     align-items: center;
     width: 100%; 
+    height: clamp(30px, 5vw, 70px);
     max-width: 100%; 
     padding: 20px;
     background-color: #5F5F5F;
     border-radius: 12px;
-    color: #ACA7A7;
-    font-size: 20px;
-    font-family: Inter;
+    color: #8f8989;
+    font-size: clamp(14px, 1.5vh, 20px);
+    font-family:'Pretendard', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
     word-wrap: break-word;
 }
 
+
 .Form > section > textarea {
+    align-items: center;
     width: 100%; 
     max-width: 100%; 
     resize: none;
-    padding: 20px;
-    min-height: 300px;
-    height: 300px;
+
+    padding: 10px 20px;
+    height: clamp(200px, 30vw, 500px);
     background-color: #5F5F5F;
     border-radius: 12px;
     
-    color: #ACA7A7;
-    font-size: 20px;
-    font-family: Inter;
+    color: #8f8989;
+    font-size: clamp(14px, 1.5vw, 20px);
+    
+    font-family:'Pretendard', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
     word-wrap: break-word;
+}
+
+.Form > section > input::placeholder,
+.Form > section > textarea::placeholder {
+    color: #8f8989;
+    font-size: clamp(14px, 1.5vh, 20px);
+    
+  font-family:'Pretendard', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-left: 5vw auto;
 }
 
 .Form .InputField{
@@ -84,121 +102,8 @@
     border: 1px solid #5F5F5F;
     border-radius: 5px;
     font-size: 20px;
-    font-family: Inter;
+    
+    font-family:'Pretendard', sans-serif;
     font-weight: 400;
     word-wrap: break-word;
 }
-/*
-// Recruting
-color: white;
- font-size: 25px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 지원서 작성
-color: white;
- font-size: 80px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 학번
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 전화번호
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 성명
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 학번 7자리 입력
-color: #ACA7A7;
- font-size: 20px;
- font-family: Inter;
- font-weight: 400;
- word-wrap: break-word
----
-// 이메일
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 질문1
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 질문2
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 질문3
-color: white;
- font-size: 35px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 휴대폰 번호 입력(‘=’ 제외 11자리 입력)
-color: #ACA7A7;
- font-size: 20px;
- font-family: Inter;
- font-weight: 400;
- word-wrap: break-word
----
-// 제출 시 내용 수정이 불가능 합니다. 작성한 내용을 다시 한 번 확인해주세요.
-color: white;
- font-size: 25px;
- font-family: Pretendard;
- font-weight: 400;
- line-height: 16px;
- letter-spacing: 0.20px;
- word-wrap: break-word
----
-// 제출하기
-color: white;
- font-size: 25px;
- font-family: Pretendard;
- font-weight: 700;
- line-height: 18px;
- letter-spacing: 11px;
- word-wrap: break-word
- */

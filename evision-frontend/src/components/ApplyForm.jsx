@@ -1,6 +1,6 @@
 import './style/ApplyForm.css';
 import { useState } from "react";
-import TextareaAutosize from 'react-textarea-autosize';
+import CautionCheckbox from './CautionCheckbox';
 
 
 const ApplyForm = () => {
@@ -12,7 +12,7 @@ const ApplyForm = () => {
     const [ans1, setAns1] = useState("");
     const [ans2, setAns2] = useState("");
     const [ans3, setAns3] = useState("");
-
+    const [caution, setCaution] = useState(false);
 
     //조건 맞는지 유효성검사
     const [isName, setIsName] = useState(false);
@@ -65,12 +65,12 @@ const ApplyForm = () => {
         <h1>지원서 작성</h1>
         </div>
             <div className="Form">
-                
                 <h3>성명</h3>
                 <section className="inputField">
                     <input 
                         id="name"
                         name="name"
+                        autoComplete="off"
                         value={name}
                         onChange={onChangeName}
                         placeholder="이름을 입력해주세요!"
@@ -82,6 +82,7 @@ const ApplyForm = () => {
                     <input 
                         id="studentID"
                         name="studentID"
+                        autoComplete="off"
                         value={studentID}
                         onChange={onChangeStudentID}
                         placeholder="학번을 입력해주세요!"
@@ -93,6 +94,7 @@ const ApplyForm = () => {
                     <input 
                         id="phoneNumber"
                         name="phoneNumber"
+                        autoComplete="off"
                         value={phoneNumber}
                         onChange={onChangePhoneNumber}
                         placeholder="신청 결과 전달을 위해 전화번호를 입력해주세요!"
@@ -105,6 +107,7 @@ const ApplyForm = () => {
                     <input 
                         id="email"
                         name="email"
+                        autoComplete="off"
                         value={email}
                         onChange={onChangeEmail}
                         placeholder="학교 메일 주소를 입력해주세요!"
@@ -113,8 +116,7 @@ const ApplyForm = () => {
 
                 <h3>질문1 내용입력</h3>
                 <section className="inputField">
-                    <TextareaAutosize 
-                        minRows={2} maxRows={6} 
+                    <textarea 
                         id="ans1"
                         name="ans1"
                         value={ans1}
@@ -126,8 +128,7 @@ const ApplyForm = () => {
 
                 <h3>질문2 내용입력</h3>
                 <section className="inputField">
-                    <TextareaAutosize 
-                        minRows={2} maxRows={6} 
+                    <textarea 
                         id="ans2"
                         name="ans2"
                         value={ans2}
@@ -139,8 +140,7 @@ const ApplyForm = () => {
 
                 <h3>질문3 내용입력</h3>
                 <section className="inputField">
-                    <TextareaAutosize 
-                        minRows={2} maxRows={6} 
+                    <textarea 
                         id="ans3"
                         name="ans3"
                         value={ans3}
@@ -149,6 +149,18 @@ const ApplyForm = () => {
                         placeholder="질문 3 내용은..."
                     />
                 </section> 
+
+                <section className='agreement'>
+                    <CautionCheckbox checked={caution} onChange={setCaution}>
+                    제출 시 내용 수정이 불가능 합니다. 작성한 내용을 다시 한 번 확인해주세요. 
+                    </CautionCheckbox>
+                </section>
+
+                <section className='submit'>
+                    <fotter>
+                        <button disabled={!caution}>Submit</button>
+                    </fotter>
+                </section>
             </div>
         </>
     )
