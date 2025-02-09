@@ -1,5 +1,5 @@
 import '.ApplyPage.css'
-import ApplyForm from '../components/ApplyForm'
+import ApplyForm from './ApplyForm'
 
 
 function ApplyPage() {
