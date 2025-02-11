@@ -13,7 +13,6 @@ html, body {
   position: relative;
   min-width: 360px;
   width: 100vw;
-  height: 237vw;
 
   background: linear-gradient(179.3deg, #000000 5.83%, #000000 20.47%, #214D21 75.18%, #255B41 99.52%);
 }
@@ -23,7 +22,8 @@ html, body {
   justify-content: center;
   align-items: flex-start;
   width: 100vw;
-  padding: 20px;
+  margin: 20px 20px auto;
+  padding: 20px auto;
   box-sizing: border-box;
   overflow: auto; 
   overflow-x: hidden;
@@ -38,14 +38,14 @@ html, body {
   min-width: 360px;
   border-radius: 12px;
   padding: 30px;
-  margin: 0 auto;
+  margin: 20px 20px auto;
   box-sizing: border-box;
   gap: 20px;
   overflow-x: hidden;
   overflow-y: auto; 
 }
 
-.RecruitingHeader {
+.Header {
   margin-left: 100px;
   align-self: flex-start;
   width: 100vw;
