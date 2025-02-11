@@ -2,167 +2,106 @@ import './style/ApplyForm.css';
 import { useState } from "react";
 import CautionCheckbox from './CautionCheckbox';
 import SubmitButton from './SubmitButton';
+import { useForm } from 'react-hook-form';
 
 const ApplyForm = () => {
     //초기값 세팅
-    const [name, setName] = useState("");
-    const [studentID, setStudentID] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [ans1, setAns1] = useState("");
-    const [ans2, setAns2] = useState("");
-    const [ans3, setAns3] = useState("");
     const [caution, setCaution] = useState(false);
 
-    //조건 맞는지 유효성검사
-    const [isName, setIsName] = useState(false);
-    const [isStudentID, setIsStudentID] = useState(false);
-    const [isPhoneNumber, setIsPhoneNumber] = useState(false);
-    const [isEmail, setIsEmail] = useState(false);
-    const [isAns1, setIsAns1] = useState(false);
-    const [isAns2, setIsAns2] = useState(false);
-    const [isAns3, setIsAns3] = useState(false);
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors }
+      } = useForm();
 
-    const onChangeName = (e) => {
-        const currentName = e.target.value;
-        setName(currentName);
-    };
-
-    const onChangeStudentID = (e) => {
-        const currentStudentID = e.target.value;
-        setStudentID(currentStudentID);
-    };
-
-    const onChangePhoneNumber = (e) => {
-        const currentPhoneNumber = e.target.value;
-        setPhoneNumber(currentPhoneNumber);
-    };
-
-    const onChangeEmail = (e) => {
-        const currentEmail = e.target.value;
-        setEmail(currentEmail);
-
-    };
-
-    const onChangeAns1 = (e) => {
-        const currentAns1 = e.target.value;
-        setAns1(currentAns1);
-    };
-
-    const onChangeAns2 = (e) => {
-        const currentAns2 = e.target.value;
-        setAns2(currentAns2);
-    };
-
-    const onChangeAns3 = (e) => {
-        const currentAns3 = e.target.value;
-        setAns3(currentAns3);
-    };
-
-    
-    function onsubmit(){
-        //나중에 제출시 서버로 넘어가는 기능 넣을 때 해당 함수 수정
-        //일단은 제출기능 작동 확인을 위해 콘솔메시지 출력하도록 설정
-
-        console.log(name)
-        console.log(studentID)
-        console.log(phoneNumber)
-        console.log(email)
-        console.log(ans1)
-        console.log(ans2)
-        console.log(ans3)
-    }
+    const onSubmit = (data) => {
+        console.log(data); // 서버로 데이터를 전송하는 로직으로 변경 가능
+      };
 
     return (
         <>
         <div className='ApplyHeader'>
         <h1>지원서 작성</h1>
         </div>
-            <div className="Form">
-                <h3>성명</h3>
+        <div className="Form" onSubmit={handleSubmit(onSubmit)}>
+            <h3>성명</h3>
                 <section className="inputField">
-                    <input 
-                        id="name"
-                        name="name"
-                        autoComplete="off"
-                        value={name}
-                        onChange={onChangeName}
-                        placeholder="이름을 입력해주세요!"
+                    <input
+                        {...register("name", {
+                            required: "성명을 입력해 주세요.",
+                            pattern: { 
+                                value: /^[A-Za-z가-힣\s]+$/,
+                                message: "이름은 영어, 한글, 띄어쓰기만 입력 가능합니다." }
+                        
+                        })}
+                        placeholder=""
                     />
-                </section> 
+                    {errors.name && <p className="error-message">{errors.name.message}</p>}
+                </section>
         
-                <h3>학번</h3>
+            <h3>학번</h3>
                 <section className="inputField">
-                    <input 
-                        id="studentID"
-                        name="studentID"
-                        autoComplete="off"
-                        value={studentID}
-                        onChange={onChangeStudentID}
-                        placeholder="학번을 입력해주세요!"
+                    <input
+                        {...register("studentID", { 
+                        required: "학번을 입력해 주세요.", 
+                        pattern: { value: /^[0-9]{7}$/, message: "학번 7자리를 입력해 주세요." }
+                        })}
+                        placeholder="학번 7자리 입력"
                     />
-                </section> 
+                {errors.studentID && <p className="error-message">{errors.studentID.message}</p>}
+                </section>
 
-                <h3>전화번호</h3>
+            <h3>전화번호</h3>
                 <section className="inputField">
-                    <input 
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        autoComplete="off"
-                        value={phoneNumber}
-                        onChange={onChangePhoneNumber}
-                        placeholder="신청 결과 전달을 위해 전화번호를 입력해주세요!"
+                    <input
+                        {...register("phoneNumber", { 
+                        required: "전화번호를 입력해 주세요.",
+                        pattern: { value: /^[0-9]{11}$/, message: "전화번호 11자리를 입력해 주세요." }
+                        })}
+                        placeholder="휴대폰 번호 입력"
                     />
-                </section> 
+                {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}</p>}
+                </section>
 
-                <h3>이메일</h3>
-                
+            <h3>이메일</h3>
                 <section className="inputField">
-                    <input 
-                        id="email"
-                        name="email"
-                        autoComplete="off"
-                        value={email}
-                        onChange={onChangeEmail}
-                        placeholder="학교 메일 주소를 입력해주세요!"
+                    <input
+                        {...register("email", { 
+                        required: "이메일을 입력해 주세요.", 
+                        pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "유효한 이메일 주소를 입력해 주세요." }
+                        })}
+                        placeholder="이메일 입력"
                     />
-                </section> 
+                {errors.email && <p className="error-message">{errors.email.message}</p>}
+                </section>
 
-                <h3>질문1 내용입력</h3>
+            <h3>질문1 내용입력</h3>
                 <section className="inputField">
-                    <textarea 
-                        id="ans1"
-                        name="ans1"
-                        value={ans1}
-                        autoComplete="off"
-                        onChange={onChangeAns1}
-                        placeholder="질문 1 내용은... "
+                    <textarea
+                        {...register("ans1", { required: "질문1의 답변을 입력해 주세요." })}
+                        placeholder="..."
                     />
-                </section> 
+                {errors.ans1 && <p className="error-message">{errors.ans1.message}</p>}
+                </section>
 
-                <h3>질문2 내용입력</h3>
+            <h3>질문2 내용입력</h3>
                 <section className="inputField">
-                    <textarea 
-                        id="ans2"
-                        name="ans2"
-                        value={ans2}
-                        autoComplete="off"
-                        onChange={onChangeAns2}
-                        placeholder="질문 2 내용은..."
+                    <textarea
+                        {...register("ans2", { required: "질문2의 답변을 입력해 주세요." })}
+                        placeholder="..."
                     />
-                </section> 
+                {errors.ans2 && <p className="error-message">{errors.ans2.message}</p>}
+                </section>
 
-                <h3>질문3 내용입력</h3>
+            <h3>질문3 내용입력</h3>
                 <section className="inputField">
-                    <textarea 
-                        id="ans3"
-                        name="ans3"
-                        value={ans3}
-                        autoComplete="off"
-                        onChange={onChangeAns3}
-                        placeholder="질문 3 내용은..."
+                    <textarea
+                        {...register("ans3", { required: "질문3의 답변을 입력해 주세요." })}
+                        placeholder="..."
                     />
-                </section> 
+                {errors.ans3 && <p className="error-message">{errors.ans3.message}</p>}
+                </section>
 
                 <section className='agreement'>
                     <CautionCheckbox checked={caution} onChange={setCaution}>
@@ -172,7 +111,7 @@ const ApplyForm = () => {
 
                 <section className='submit'>
                     <fotter>
-                        <SubmitButton disabled={!caution} onClick={onsubmit}>
+                        <SubmitButton disabled={!caution} onClick={handleSubmit(onSubmit)}>
                             <span>제출하기</span>
                         </SubmitButton>
                     </fotter>
@@ -183,6 +122,7 @@ const ApplyForm = () => {
 }
 
 export default ApplyForm       
+
 
 // 참고한 링크
 // https://velog.io/@dev__note/react-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8F%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC-%EC%84%B8%ED%8C%85
