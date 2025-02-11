@@ -1,7 +1,7 @@
 import './style/ApplyForm.css';
 import { useState } from "react";
 import CautionCheckbox from './CautionCheckbox';
-
+import SubmitButton from './SubmitButton';
 
 const ApplyForm = () => {
     //초기값 세팅
@@ -58,6 +58,20 @@ const ApplyForm = () => {
         const currentAns3 = e.target.value;
         setAns3(currentAns3);
     };
+
+    
+    function onsubmit(){
+        //나중에 제출시 서버로 넘어가는 기능 넣을 때 해당 함수 수정
+        //일단은 제출기능 작동 확인을 위해 콘솔메시지 출력하도록 설정
+
+        console.log(name)
+        console.log(studentID)
+        console.log(phoneNumber)
+        console.log(email)
+        console.log(ans1)
+        console.log(ans2)
+        console.log(ans3)
+    }
 
     return (
         <>
@@ -158,7 +172,9 @@ const ApplyForm = () => {
 
                 <section className='submit'>
                     <fotter>
-                        <button disabled={!caution}>Submit</button>
+                        <SubmitButton disabled={!caution} onClick={onsubmit}>
+                            <span>제출하기</span>
+                        </SubmitButton>
                     </fotter>
                 </section>
             </div>

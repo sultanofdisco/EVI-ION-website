@@ -21,7 +21,7 @@
 .ApplyHeader > h1{
     color: white;
     font-size: clamp(20px, 8vw, 80px);
-    
+    margin-left: 0.5vw;
     font-family: Pretendard;
     text-align: left;
     font-weight: 700;
@@ -31,6 +31,7 @@
 }
 
 .Form > h3 {
+    margin-left: 0.5vw;
     text-align: left;
     color: white;
     font-size: 3.5vw;
@@ -57,7 +58,7 @@
     background-color: #5F5F5F;
     border-radius: 12px;
     color: #8f8989;
-    font-size: clamp(14px, 1.5vh, 20px);
+    font-size: clamp(14px, 2vw, 20px);
     font-family:'Pretendard', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
@@ -72,12 +73,12 @@
     resize: none;
 
     padding: 10px 20px;
-    height: clamp(200px, 30vw, 500px);
+    height: clamp(140px, 30vw, 600px);
     background-color: #5F5F5F;
     border-radius: 12px;
     
     color: #8f8989;
-    font-size: clamp(14px, 1.5vw, 20px);
+    font-size: clamp(14px, 2vw, 20px);
     
     font-family:'Pretendard', sans-serif;
     font-weight: 400;
@@ -88,22 +89,27 @@
 .Form > section > input::placeholder,
 .Form > section > textarea::placeholder {
     color: #8f8989;
-    font-size: clamp(14px, 1.5vh, 20px);
+    font-size: clamp(14px, 2vw, 20px);
     
-  font-family:'Pretendard', sans-serif;
+    font-family:'Pretendard', sans-serif;
     font-weight: 400;
     word-wrap: break-word;
     margin-left: 5vw auto;
 }
 
-.Form .InputField{
-    color: #8f8989;
-    background-color: #5F5F5F;
-    border: 1px solid #5F5F5F;
-    border-radius: 5px;
-    font-size: 20px;
+
+.Form .agreement{
+    margin-top: 3vw;
+    margin-bottom: 10vw;
+}
+
+.Form .submit{
     
-    font-family:'Pretendard', sans-serif;
-    font-weight: 400;
+    width: 100%; 
+    
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
     word-wrap: break-word;
 }
