@@ -3,8 +3,8 @@
   padding: 50px 20px;
   font-family: "Krona One", sans-serif;
   max-width: 1500px;
-  margin: 350px auto 0 auto;
-  margin-top: 100px;
+  margin: 300px auto 0 auto;
+  margin-top: 0px;
 }
 
 .achieve-section h2 {
@@ -12,7 +12,7 @@
   text-align: right;
   font-weight: bold;
   margin-bottom: 460px;
-  margin-right: -230px;
+  margin-right: -220px;
   padding-bottom: 47%;
 }
 
@@ -34,8 +34,8 @@
 .event::before {
   content: '';
   position: absolute;
-  right: -28px; /* 선과의 수평 위치 */
-  top: 0;       /* 수직 위치 */
+  right: -28px;           /* 선과의 수평 위치 */
+  top: 0;                 /* 수직 위치 */
   width: 12px;
   height: 12px;
   background-color: white;
@@ -66,7 +66,6 @@
   top: 12%;
 }
 
-/* Custom adjustments for 2023 and 2024 */
 .custom-2023::before {
   top: 28% !important; 
 }

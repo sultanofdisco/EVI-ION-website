@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.png'; 
 import './Header.css';
 
+// 홈페이지를 새로 고침
 function Header() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleLogoClick = (e) => {
-    e.preventDefault(); // 기본 동작(페이지 이동) 막기
-    window.location.reload(); // 페이지 새로고침
+    e.preventDefault();         // 기본 동작(페이지 이동) 막기
+    window.location.reload();   // 페이지 새로고침
   };
 
   return (
     <div className="header">
-      <div className="logo-container">
+      <div className="header_logo">
         <img className="logo" src={logo} alt="EVISION 로고" />
         <a href="#" className="logo-text" onClick={handleLogoClick}>EVI$ION</a>
       </div>
-      <nav className="nav">
+      
+      {/* 햄버거 버튼 */}
+      <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>☰</button>
+
+      {/* 메뉴 */}
+      <nav className={`menu ${isOpen ? "open" : ""}`}>
         <ul>
           <li><a href="#" className="recruiting-wrapper"><span className="recruiting-btn">Recruiting</span></a></li>
           <li><a href="#about">동아리 소개</a></li> 
@@ -26,6 +35,5 @@ function Header() {
     </div>
   );
 }
-
 
 export default Header;

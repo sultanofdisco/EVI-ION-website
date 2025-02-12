@@ -1,9 +1,9 @@
 .activity-section {
   color: white;
-  padding: 50px 20px;
+  padding: 50px 0px;
   font-family: "Krona One", sans-serif;
   max-width: 1500px;
-  margin: -500px auto 0 auto;
+  margin: -430px auto 0 auto; /* margin-left 제거 */
   text-align: left;
 }
 
@@ -11,62 +11,30 @@
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 30px;
-  padding-left: 2.8%;
 }
 
-.slider-container {
-  display: flex;
-  align-items: center;
+/* 2x2 박스 정렬을 위한 grid 레이아웃 */
+.activity-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 90px;
   justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.activity-slider {
-  display: flex;
-  gap: 60px;
-  overflow-x: hidden;
-  width: 1200px;
-  max-width: 1300px;
-  scroll-behavior: smooth;
-  justify-content: flex-start;
-  white-space: nowrap;
-  padding: 10px 0;
+  align-items: center;
+  margin: 65px auto;
 }
 
 .activity-box {
-  flex: 0 0 400px;
+  width: 400px;
   height: 380px;
   background-color: #d9d9d9;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* 부드럽게 움직이도록 */
 }
 
-.first-box {
-  margin-left: 20px;
-}
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  padding: 15px 20px;
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.slider-button.left {
-  left: 0px;
-}
-
-.slider-button.right {
-  right: 2px;
+/* 뭔가 박스가 강조되는 느낌을 주고 싶음 */
+.activity-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

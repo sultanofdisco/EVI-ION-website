@@ -28,6 +28,13 @@ function FAQ() {
       </div>
 
       <p className="faq-note">* 기타 문의사항이 있다면 기재된 연락처로 연락부탁드립니다.</p>
+
+      <div className="call">
+        <h4>연락처</h4>
+        <p>인스타그램 @evision_security</p>
+        <p>회장 오수진 (010-9064-4550)</p>
+        <p>부회장 명승희 (010-)</p>
+      </div>
     </div>
   );
 }
