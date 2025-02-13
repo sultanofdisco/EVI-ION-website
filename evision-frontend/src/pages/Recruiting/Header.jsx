@@ -4,7 +4,8 @@ import bigkey from "../../assets/bigkey.png";
 
 const Header = () => {
   return (
-    <div className="header-container"> {/* 기존 header 태그를 div로 변경 */}
+    <header className="header-container">
+
       <div className="ev h1">EVI$ION</div>
 
       <div className="bk">
@@ -22,7 +23,7 @@ const Header = () => {
         <br />
         <hr />
       </div>
-    </div>
+    </header>
   );
 };
 
