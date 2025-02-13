@@ -14,7 +14,7 @@
 
 .apply-logo {
   height: 80px;
-  transform: rotate(-35.51deg) scale(0.9);
+  transform: rotate(-35.51deg) scale(0.8);
   margin-left: 40%;
   margin-top: 10px;
 }
@@ -27,7 +27,7 @@
   border: 2px solid white;
   color: white;
   font-weight: bold;
-  padding: 20px 25px; /* 버튼 크기 조정 */
+  padding: 20px 20px; /* 버튼 크기 조정 */
   font-size: 15px;
   border-radius: 30px;
   cursor: pointer;
