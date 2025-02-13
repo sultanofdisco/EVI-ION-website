@@ -14,13 +14,14 @@ const StyledButton = styled.button`
     display : block;
     justify-content: center;
     align-items: center;
-    width: clamp(100px, 20vw, 300px); 
+    width: clamp(100px, 20vw, 250px); 
     min-height: 40px;
+    white-space: nowrap;
 
     font-family:'Pretendard';
     letter-spacing: 0.5vw;
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 200;
+    font-size: clamp(19px, 2vw, 2px);
+    font-weight: 700;
 
     &:disabled{
         border: 2px solid rgba(255, 255, 255, 0.2);

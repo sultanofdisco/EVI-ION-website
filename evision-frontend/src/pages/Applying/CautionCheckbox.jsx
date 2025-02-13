@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const StyledInput = styled.input`
   appearance: none;
-  width: 22px;
-  height: 22px;
+  width: clamp(16px, 2vw, 10px);
+  height: clamp(16px, 2vw, 10px);
   border: 2px solid white;
   border-radius: 5px;
   margin-right: 1vw;
@@ -26,7 +26,7 @@ const StyledLabel = styled.label`
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 2vw, 19px);
+  font-size: clamp(18px, 2vw, 10px);
   line-height: 90%;
   text-align: center;
   letter-spacing: 0.2px;
