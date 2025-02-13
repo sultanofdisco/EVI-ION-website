@@ -4,7 +4,7 @@ import bigkey from "../../assets/bigkey.png";
 
 const Header = () => {
   return (
-    <header className="header-container">
+    <div className="header-container">
 
       <div className="ev h1">EVI$ION</div>
 
@@ -23,7 +23,7 @@ const Header = () => {
         <br />
         <hr />
       </div>
-    </header>
+    </div>
   );
 };
 

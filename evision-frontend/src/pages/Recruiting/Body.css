@@ -2,38 +2,39 @@
   display: grid;
   grid-template-rows: repeat(5, auto);
   grid-template-columns: 1fr 3fr;
-  gap: 15px 30px;       /* 행과 열 간격 */
-  align-items: center;  /* 수직 중앙 정렬 */
-  margin-left: 160px;
-  max-width: 1300px;    /* 화면이 줄어들어도 너비 유지 */
-  width: 1500px;          /* 가로 길이를 화면 크기에 맞춤 */
+  gap: 15px 30px;
+  align-items: center;
+  max-width: 1300px;
+  width: 80%;
+  margin: 0 auto;
   white-space: pre-line;
+  transform: translateY(-30px);
 }
 
 .body-container h1,
 .body-container h2,
 .body-container h3,
 .body-container h4 {
-  font-size: 20px;
+  font-size: 21px;
   color: white;
   text-align: left;
   padding-bottom: 13%;
-  margin-left: 20px;
+  margin-left: 21px;
   white-space: pre-line;
 }
 
 .body-container p {
-  font-size: 20px;
+  font-size: 21px;
   color: white;
   text-align: left;
   margin-bottom: 40px;
-  margin-left: -90px;
+  margin-left: 0;
   white-space: pre-line;
 
 }
 
 .body-container h4 {
-  font-size: 20px;
+  font-size: 21px;
   color: white;
   text-align: left;
   margin-left: 20px;
@@ -43,9 +44,9 @@
 
 .info-container {
   display: grid;
-  grid-template-columns: 200px auto; /* 제목과 내용의 컬럼 크기 설정 */
-  row-gap: 0px; /* 행 간격을 일정하게 유지 */
-  align-items: start; /* 위쪽 정렬 */
+  grid-template-columns: 200px auto;
+  row-gap: 0px;
+  align-items: start;
 }
 
 h4 {
@@ -63,9 +64,8 @@ h4 {
   grid-column: span 2;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
   padding-bottom: 5%;
-  margin-right: 130px;
 }
 
 .apply-btn {
@@ -80,9 +80,10 @@ h4 {
   cursor: pointer;
   transition: 0.3s ease-in-out;
   text-decoration: none; /* 밑줄 제거 */
+  transform-origin: center;
 }
 
 .apply-btn:hover {
-  background-color: #26732c; /* 어두운 초록색 */
-  transform: scale(1.05); /* 살짝 커지는 효과 */
+  background-color: #26732c;
+  transform: scale(1.05);
 }
