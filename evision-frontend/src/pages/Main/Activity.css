@@ -10,7 +10,8 @@
 .activity-section h2 {
   font-size: 40px;
   font-weight: bold;
-  margin-bottom: 10px; /* 제목과 세부 내용 간격 조정 */
+  margin-bottom: 30px; /* 제목과 세부 내용 간격 조정 */
+  margin-left: -17px;
 }
 
 /* 세부 설명 스타일 추가 */
@@ -18,21 +19,24 @@
   font-size: 18px;
   color: #d0d0d0;
   margin-bottom: 30px;
+  margin-left: -8px;
+
 }
 
 /* 2x2 박스 정렬을 위한 grid 레이아웃 */
 .activity-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 90px;
+  gap: 100px;
   justify-content: center;
   align-items: center;
   margin: 65px auto;
+
 }
 
 .activity-box {
   position: relative;
-  width: 400px;
+  width: 440px;
   height: 380px;
   background-color: #d9d9d9;
   border-radius: 20px;

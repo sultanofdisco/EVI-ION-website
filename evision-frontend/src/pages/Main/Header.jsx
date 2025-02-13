@@ -34,10 +34,10 @@ const Header = () => {
               Recruiting
             </Link>
           </li>
-          <li onClick={() => scrollToSection("ewhaianInfo")}>동아리 소개</li>
-          <li onClick={() => scrollToSection("teamInfo")}>수상 실적 및 기록</li>
-          <li onClick={() => scrollToSection("activities")}>활동 기록</li>
-          <li onClick={() => scrollToSection("qna")}>자주 묻는 질문</li>
+          <li onClick={() => scrollToSection("about")}>동아리 소개</li>
+          <li onClick={() => scrollToSection("achieve")}>수상 실적 및 기록</li>
+          <li onClick={() => scrollToSection("activity")}>활동 기록</li>
+          <li onClick={() => scrollToSection("faq")}>자주 묻는 질문</li>
         </ul>
 
         <button className="nav-toggle" onClick={toggleMenu}>

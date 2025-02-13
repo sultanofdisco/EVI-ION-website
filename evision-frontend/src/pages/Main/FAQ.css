@@ -13,14 +13,14 @@
   font-family: "Krona One", sans-serif;
   margin-bottom: 60px;
   text-align: right;
-  margin-right: 7px;
+  margin-right: 0px;
 }
 
 .faq-item {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 30px;
-  width: 1060px;
+  width: 1000px;
   margin-bottom: 30px;
   text-align: left;
 }
