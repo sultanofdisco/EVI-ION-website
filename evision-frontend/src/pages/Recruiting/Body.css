@@ -6,7 +6,7 @@
   align-items: center;  /* 수직 중앙 정렬 */
   margin-left: 160px;
   max-width: 1300px;    /* 화면이 줄어들어도 너비 유지 */
-  width: 100%;          /* 가로 길이를 화면 크기에 맞춤 */
+  width: 1500px;          /* 가로 길이를 화면 크기에 맞춤 */
   white-space: pre-line;
 }
 
@@ -28,6 +28,7 @@
   text-align: left;
   margin-bottom: 40px;
   margin-left: -90px;
+  white-space: pre-line;
 
 }
 

@@ -1,7 +1,7 @@
 .header-container {
   display: grid; /* 로고와 버튼을 가로로 배치 */
   grid-template-rows: auto;
-  width: 100%;
+  width: 1500px;
   grid-template-rows: repeat(4, 60px);
   grid-template-columns: repeat(9, 1fr);
   grid-template-areas:

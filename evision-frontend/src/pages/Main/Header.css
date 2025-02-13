@@ -1,59 +1,55 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-a{
-  text-decoration: none;                     /* 기본적으로 들어가는 텍스트 데코 */
+a {
+  text-decoration: none;
   color: white;
 }
 
 .header_logo,
-.menu{
+.menu {
   flex: 1;
   display: flex;
 }
 
 .header {
-  top:0;
+  top: 0;
   left: 0;
-  width: calc(100% - 17px);                  /* 스크롤바를 고려함 */
+  width: calc(100% - 17px);
   height: 12%;
   padding: 0;
-  display: flex;                             /* 일렬로 배열 */
-  flex-wrap:nowrap;
-  justify-content: space-between;            /* 적당한 간격 */
-  align-items: center;                       /* 메뉴바 일렬로 배열 */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
   background: linear-gradient(
     to top,
-    #000000,      
-    #061006,  
-    #0a1e0a,  
-    #0f3010, 
-    #123d12,   
-    #145214  
-  );               /* 배경 색 */
+    #000000,
+    #061006,
+    #0a1e0a,
+    #0f3010,
+    #123d12,
+    #145214
+  );
   position: fixed;
   z-index: 100;
 }
 
-/* 로고 이미지와 텍스트의 공통 속성 */
 .header_logo {
   display: flex;
   color: white;
   align-items: center;
-  padding-top: 0%;                            /* 메뉴바와 높이를 맟추기 위한 패딩 */
   margin-left: 25px;
 }
 
-/* 로고 이미지 속성 */
 .logo {
-  height: 54px;                               /* 로고 이미지의 크기 조절 */
+  height: 54px;
   object-fit: contain;
-  transform: rotate(-35.51deg) scale(0.85);   /* 기존 transform 제거 */
+  transform: rotate(-35.51deg) scale(0.85);
 }
 
-/* 로고 텍스트 속성 */
 .logo-text {
   font-size: 28px;
   font-family: "Krona One", sans-serif;
@@ -63,51 +59,46 @@ a{
 
 .menu {
   display: flex;
-  list-style: none;
   padding: 0 6px;
 }
 
 .menu ul {
   display: flex;
-  align-items: center;    
-  margin-top: 0%;                              /* 로고와 높이를 맞추기 위한 패딩 */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .menu ul li {
-  display: flex;
-  margin: 0 20px;                              /* 메뉴 선택지끼리의 패딩 */
+  margin: 0 20px;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.menu ul li a {
-  text-decoration: none;        
-}
-
-/* 텍스트에 커서를 올렸을 때 */
 .menu ul li a:hover {
   color: #349e40;
 }
 
 .recruiting-wrapper {
   display: flex;
-  align-items: center;   
-  height: 40px;            
+  align-items: center;
+  height: 40px;
 }
 
 .recruiting-btn {
   display: flex;
-  align-items: center;        
+  align-items: center;
   justify-content: center;
   padding: 8px 20px;
   border: 2px solid white;
   border-radius: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
-  height: 40px;              
+  height: 40px;
   box-sizing: border-box;
-  line-height: 1;           
+  line-height: 1;
 }
 
 .recruiting-btn:hover {
@@ -117,7 +108,7 @@ a{
 }
 
 .hamburger {
-  display: none;            /* 기본적으로 최대화일 때는 안보이도록 */
+  display: none;
   font-size: 24px;
   background: none;
   border: none;
@@ -126,19 +117,18 @@ a{
   margin-right: 20px;
 }
 
-/* 반응형 스타일 (1530px 이하) -> 거의 그냥 최소화가 되는 순간 바로 햄버거 버튼*/
 @media (max-width: 1530px) {
   .menu {
-    display: none;            /* 메뉴 숨기기 */
+    display: none;
   }
 
   .hamburger {
-    display: block;           /* 화면이 최소화되면 햄버거버튼 보이게 */
+    display: block;
   }
 
   .menu.open {
     display: flex;
-    flex-direction: column;   /* 메뉴들을 colume으로 배치 */
+    flex-direction: column;
     position: absolute;
     top: 60px;
     right: 10px;
@@ -149,7 +139,7 @@ a{
 
   .menu.open ul {
     flex-direction: column;
-    align-items: center;      /* 메뉴들은 중앙정렬 */
+    align-items: center;
   }
 
   .menu.open ul li {
