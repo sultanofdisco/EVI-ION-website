@@ -14,6 +14,8 @@
   transform: rotate(-35.51deg) scale(0.85);   /* 기존 transform 제거 */
   margin-left: 400%;
   margin-top: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .main-btn {

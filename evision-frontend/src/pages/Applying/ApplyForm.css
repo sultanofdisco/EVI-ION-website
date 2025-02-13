@@ -2,8 +2,10 @@
   margin: -200px 20px auto;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
   padding: 200px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .ApplyHeader {
@@ -11,7 +13,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 30px;
+  padding: 0;
+  padding-top: 30px;
   margin-bottom: -90px;
   margin-top: -50px;
 }
@@ -19,14 +22,16 @@
 .ApplyHeader > h1{
   color: white;
   font-size: clamp(20px, 8vw, 50px);
-  margin-left: 0.5vw;
+  
   font-family: Pretendard;
   text-align: left;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.20px;
   word-wrap: break-word;
-  padding-left: 165px;
+  padding-left: 100px;
+  padding-right: 0;
+  margin-left: 0;
 }
 
 .Form > h3 {
