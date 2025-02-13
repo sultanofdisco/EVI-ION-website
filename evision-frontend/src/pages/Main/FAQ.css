@@ -1,0 +1,49 @@
+.faq-section {
+  color: white;
+  padding: 50px 20px;         /* 이 부분을 일정하게 해야 이동이 일정 */
+  text-align: left;
+  font-family:'Pretendard', sans-serif;
+  max-width: 1500px;
+  margin: 220px auto 0 auto;
+}
+
+.faq-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Krona One", sans-serif;
+  margin-bottom: 60px;
+  text-align: right;
+  margin-right: 7px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 1060px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.faq-item h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 18px;
+  color: white;
+  line-height: 1.8;
+}
+
+.faq-note {
+  font-size: 16px;
+  color: #a1d19e;
+  margin-top: 20px;
+}
+
+.call {
+padding-top: 10%;
+line-height: 1.8;
+}

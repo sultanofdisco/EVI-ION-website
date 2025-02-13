@@ -1,0 +1,111 @@
+.Form{
+  margin: -200px 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 200px;
+}
+
+.ApplyHeader {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px;
+  margin-bottom: -90px;
+  margin-top: -50px;
+}
+
+.ApplyHeader > h1{
+  color: white;
+  font-size: clamp(20px, 8vw, 50px);
+  margin-left: 0.5vw;
+  font-family: Pretendard;
+  text-align: left;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.20px;
+  word-wrap: break-word;
+  padding-left: 165px;
+}
+
+.Form > h3 {
+  margin-left: 0.5vw;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-align: left;
+  color: white;
+  font-size: 3.5vw;
+  font-size: clamp(10px, 3vw, 27px);
+  font-family: Pretendard;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+}
+
+.Form > section {
+  align-items: center;
+  width: 100%;
+}
+
+/* 인적 사항 입력 텍스트 */
+.Form > section > input {
+  align-items: center;
+  width: 100%; 
+  height: clamp(25px, 2vw, 50px);
+  max-width: 100%; 
+  padding: 23px 15px; /* 칸 안에 입력 설명 */
+  background-color: #5F5F5F;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: clamp(14px, 2vw, 18px);
+  font-family:'Pretendard', sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+/* 질문 사항 입력 텍스트 */
+.Form > section > textarea {
+  align-items: center;
+  width: 100%;
+  resize: none;
+  padding: 15px 20px;
+  height: clamp(140px, 30vw, 600px);
+  background-color: #5F5F5F;
+  border-radius: 12px;
+  color: #ffffff;   /* 질문 입력시 색 변화 */
+  font-size: clamp(14px, 2vw, 18px);
+  font-family:'Pretendard', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+/* 그 입력 박스 안에 글씨 */
+.Form > section > input::placeholder,
+.Form > section > textarea::placeholder {
+  color: #8f8989;
+  font-size: clamp(14px, 2vw, 16px); /* 입력 박스 안 폰트 크기 */
+  font-family:'Pretendard', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin-left: 5vw auto;
+}
+
+.Form .agreement{
+  margin-top: 3vw;
+  margin-bottom: 10vw;
+}
+
+.Form .submit{
+  width: 100%; 
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}

@@ -1,0 +1,95 @@
+.header-container {
+  display: grid; /* 로고와 버튼을 가로로 배치 */
+  grid-template-rows: auto;
+  width: 100%;
+  grid-template-rows: repeat(4, 60px);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "lk . . . . . . rec ."
+    "ev . . . . . . bk bk"
+    "li li li li li li li li ."
+    "li li li li li li li li .";
+  gap: 60px;
+  padding-top: 20px;
+  padding-left: 160px;
+}
+
+.lk {
+  grid-area: lk;
+  margin-top: 30px;
+}
+
+.rec {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: rec;
+  padding-top: 60px;
+}
+
+.ev {
+  grid-area: ev;
+}
+
+.bk {
+  justify-self: end;
+  grid-area: bk;
+}
+
+.li {
+  grid-area: li;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.biglogo {
+  width: 350px;
+  margin-top: 20px;
+  margin-right: 20px;
+  transform: translateY(-100px) rotate(-8.74deg);
+  opacity: 0.5;
+}
+
+.main-btn {
+  z-index: 10;
+  font-family: "Pretendard", sans-serif;
+  background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
+  border: 2px solid white; /* 흰색 테두리 */
+  color: white;
+  padding: 10px 20px; /* 버튼 크기 조정 */
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.main-btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05); /* 살짝 커지는 효과 */
+}
+
+.h1 {
+  font-size: 50px;
+  padding-top: 20px;
+  color: white;
+  font-family: "Krona One", sans-serif;
+}
+
+.h2 {
+  font-size: 30px;
+  font-family: "Pretendard", sans-serif;
+}
+
+hr {
+  opacity: 0.5;
+  transform: translateY(20px);
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}

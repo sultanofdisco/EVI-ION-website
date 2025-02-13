@@ -1,0 +1,73 @@
+.about-section {
+  color: white;
+  padding: 50px 0px;                      /* 이 부분을 일정하게 해야 이동이 일정 */
+  text-align: left;                       /* 왼쪽 정렬 */
+  font-family: "Krona One", sans-serif;
+  max-width: 1500px;
+  margin: 300px 0;                        /* about section 자체의 상단 여백 */
+}
+
+.about-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 1px;
+}
+
+.about-section p {
+  font-size: 22px;
+  font-family:'Pretendard', sans-serif;
+  font-weight: bold;
+  line-height: 2;                         /* 글자 줄간 간격 */
+  margin: 0;                              /* 불필요한 마진 제거 */
+  padding: 10px;                         
+  white-space: pre-line;                  /* 마침표로 줄바꿈 유지 */
+}
+
+.instagram-link {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-size: 20px;
+  margin-top: 60px;
+  margin-left: 680px;
+  flex-wrap: nowrap;
+}
+
+.instagram-link:hover {
+  color: #1eb46c;
+  border-color: #1eb46c;
+}
+
+.about-section p:nth-of-type(1) {
+  color: #1d903e;
+  font-size: 30px;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;        /* 중앙 정렬 */
+  align-items: center;            /* 수직 정렬 */
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: nowrap;              /* 화면 크기에 따라 줄바꿈하지 않음 */
+}
+
+.tag {
+  display: inline-block;
+  padding: 10px 40px;
+  border: 2px solid white;
+  border-radius: 20px;            /* 둥근 모서리 */
+  font-size: 18px;
+  font-weight: 500;
+  background: transparent;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease-in-out;
+}
