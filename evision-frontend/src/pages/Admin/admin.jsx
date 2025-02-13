@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./admin.css";
+import axios from "axios";
 import keyImage from "../../assets/logo.png"; // 열쇠 이미지 경로
 
 const Admin = () => {
@@ -7,10 +8,20 @@ const Admin = () => {
 
   // 백엔드에서 데이터 가져오기
   useEffect(() => {
-    fetch("http://localhost:5000/api/applicants") // 백엔드 API 주소
-      .then((response) => response.json())
-      .then((data) => setApplicants(data))
-      .catch((error) => console.error("데이터 가져오기 실패:", error));
+    const fetchApplicants = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/admin");
+        if (response.data.success) {
+          setApplicants(response.data.data); // Extract data correctly
+        } else {
+          console.error("데이터 로드 실패:", response.data.message);
+        }
+      } catch (error) {
+        console.error("데이터 가져오기 실패:", error.message);
+      }
+    };
+
+    fetchApplicants();
   }, []);
 
   return (

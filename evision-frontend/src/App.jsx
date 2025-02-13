@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
@@ -13,6 +15,13 @@ import Recruiting from "./pages/Recruiting/Recruiting";
 import Admin from './pages/Admin/admin';
 
 function MainPage() {
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/").then((response)=>{
+      console.log("IT WORKED");
+    })
+  }, []);
+
   return (
     <div className="container">
       <Header />

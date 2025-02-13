@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import applyRoutes from './routes/apply.js';
-import applyProcRoutes from './routes/applyProc.js'; 
 import adminRoutes from './routes/admin.js';
 import mainRoutes from './routes/main.js';
 import recruitingRoutes from './routes/recruiting.js';
@@ -16,7 +15,6 @@ app.use(express.json());
 
 
 app.use('/apply', applyRoutes);        
-app.use('/applyProc', applyProcRoutes); 
 app.use('/admin', adminRoutes);         
 app.use('/', mainRoutes);            
 app.use('/recruiting', recruitingRoutes);
