@@ -90,7 +90,7 @@
   height: 30px;
 }
 
-/* 📱 모바일 화면 대응 */
+/* 모바일 화면 대응 */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
