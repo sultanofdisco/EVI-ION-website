@@ -3,23 +3,24 @@
   color: white;
   text-align: center;
   font-family: "Krona One", sans-serif;       /* 전체적인 글꼴 */
-  margin: 100px 0;                            /* 헤더로부터 여백을주기 위한 마진 */
+  margin: 130px 0;                            /* 헤더로부터 여백을주기 위한 마진 */
   
 }
 
 .hero h2 {
   font-size: 100px;
-  margin-top: 145px;
+  margin-top: 160px;
   margin-bottom: 15px;      /* 아래 멘트와 여백을 주기 위함 */
   position: relative;
   z-index: 2;               /* 뒤에 열쇠 이미지보다 앞으로 빼기 위함*/
   letter-spacing: 2px;
+  transform: translateY(25%);
 }
 
 .hero img {
-  width: 150%;
-  height: 150%;
-  opacity: 0.35;                        /* 이미지를 얼마나 투명감을 줄건지 */
+  width: 122%;
+  height: 130%;
+  opacity: 0.3;                        /* 이미지를 얼마나 투명감을 줄건지 */
   position: absolute;
   left: 50%;                            /* 왼쪽으로부터 여백을 주기 위함 */
   transform: translate(-50%, -50%);
@@ -28,14 +29,16 @@
 
 .hero p {
   display: inline;
-  font-size: 35px;
-  font-weight: 870;
+  font-size: 27px;
+  font-weight: 600;
   position: relative;
   z-index: 2;
   font-family:'Pretendard', sans-serif;  /* 한글 폰트 */
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  color: white;
+  top: 30px; 
 }
 
 .hero p:nth-of-type(2) {
-  color: #1d903e;
+  color: #128834;
 }

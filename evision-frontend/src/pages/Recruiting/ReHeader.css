@@ -4,46 +4,34 @@
   align-items: center;
   width: 100%; /* 화면 크기에 맞게 조정 */
   max-width: 1500px; /* 최대 너비 유지 */
-  padding: 0 40px;
+  padding: 0 auto;
   position: relative;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  transform: translateX(-42%);
   overflow: visible;
 }
 
 .re-logo {
   height: 80px;
-  transform: rotate(-35.51deg) scale(0.9);
-  margin-left: 40%;
+  transform: rotate(-35.51deg) scale(0.75);
   margin-top: 10px;
 }
 
-.main-btn {
-  z-index: 99999;
-  position : fixded;
-  font-family: "Pretendard", sans-serif;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
+.main-btn1 {
+  background: rgba(255, 255, 255, 0.1);
+  position : relative;
+  border: 2px solid white;;
   color: white;
-  font-weight: bold;
-  padding: 20px 25px; /* 버튼 크기 조정 */
-  font-size: 15px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  padding: 8px;
+  font-weight: 550;
+  border-radius: 20px;
   text-decoration: none;
-  margin-top: 40px;
-  margin-right: 40px;
-  white-space: nowrap;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
+  transition: 0.3s;
 }
 
-.main-btn:hover {
+.main-btn1:hover {
   background-color: white;
   color: black;
   transform: scale(1.05);

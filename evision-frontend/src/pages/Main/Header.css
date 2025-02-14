@@ -13,7 +13,7 @@
   padding: 15px 0;
   color: white;
   position: fixed;
-  width: 98.7%;
+  width: 99%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -36,7 +36,7 @@
 }
 
 .logo-text {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: white;
   font-family: "Krona One", sans-serif;
@@ -52,7 +52,9 @@
   display: flex;
   gap: 20px;
   list-style: none;
-  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  color: rgb(204, 204, 204);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 .nav-menu li {
@@ -61,14 +63,15 @@
 }
 
 .nav-menu li:hover {
-  color: #06da73;
+  color: #1d903e;
 }
 
 .nav-btn {
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
+  border: 2px solid white;;
   color: white;
-  padding: 8px 15px;
+  padding: 6px 16px;
+  font-weight: 550;
   border-radius: 20px;
   text-decoration: none;
   transition: 0.3s;

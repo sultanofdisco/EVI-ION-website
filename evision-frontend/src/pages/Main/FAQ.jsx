@@ -31,9 +31,9 @@ function FAQ() {
 
       <div className="call">
         <h4>연락처</h4>
-        <p>인스타그램 @evision_security</p>
-        <p>회장 오수진 (010-9064-4550)</p>
-        <p>부회장 명승희 (010-2672-8743)</p>
+        <pre>인스타그램      @evision_security</pre>
+        <pre>회장               오수진 (010-9064-4550)</pre>
+        <pre>부회장            명승희 (010-2672-8743)</pre>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const Header = () => {
       <div className="nav-container">
         <Link to="/" className="nav-logo">
           <img src="/src/assets/logo.png" alt="Logo" />
-          <span className="logo-text">EVISION</span>
+          <span className="logo-text">EVI$ION</span>
         </Link>
 
         <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>

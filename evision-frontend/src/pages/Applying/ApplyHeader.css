@@ -2,20 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* 화면 크기에 맞게 조정 */
-  max-width: 1000px; /* 최대 너비 유지 */
-  padding: 0 40px;
-  position: relative;
+  max-width: 1300px; /* 중앙에 정렬할 최대 너비 */
+  width: 100%;
+  padding: 0 auto; /* 최대 너비 유지 */
+  position: relative; /* 화면 축소/확대 시에도 위치 유지 */
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-32%); /* 정확한 중앙 정렬 */
   overflow: visible;
 }
-
 .apply-logo {
   height: 80px;
-  transform: rotate(-35.51deg) scale(0.8);
-  margin-left: 40%;
+  transform: rotate(-35.51deg) scale(0.75);
   margin-top: 10px;
 }
 
@@ -34,7 +32,7 @@
   transition: 0.3s ease-in-out;
   text-decoration: none;
   margin-top: 40px;
-  margin-right: 40px;
+  margin-right: -100px;
   white-space: nowrap;
   height: 50px;
   display: flex;

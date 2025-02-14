@@ -8,7 +8,7 @@
 }
 
 .achieve-section h2 {
-  font-size: 40px;
+  font-size: 37px;
   text-align: right;
   font-weight: bold;
   margin-bottom: 460px;
@@ -58,7 +58,7 @@
 
 .event.right::before {
   right: 94.85%; /* 오른쪽 항목만 따로 조정 */
-  top: 44%;
+  top: 44%;;
 }
 
 .event.left::before {
@@ -75,15 +75,16 @@
 }
 
 .year {
-  font-size: 27px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 4%;
   padding-top: 10%;
 }
 
 .details p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 8px 0;
-  font-family: 'Pretendard', sans-serif;
+  color:#d3d3d3;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }

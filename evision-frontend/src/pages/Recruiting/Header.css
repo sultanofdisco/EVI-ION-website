@@ -9,10 +9,10 @@
     "li li li li li li li li .";
   gap: 60px;
   margin: 0 auto;
-  width: 1500px; /* 너비를 px 단위로 고정 */
+  width: 1400px; /* 너비를 px 단위로 고정 */
   min-width: 360px;
   max-width: 100%;
-  transform: translateX(80px) translateY(-60px);
+  transform: translateX(80px) translateY(-70px);
   position: relative;
   pointer-events: none;
 }
@@ -54,7 +54,7 @@
   position: absolute;
   margin-top: 20px;
   margin-right: 100px;
-  transform: translateX(-440px) translateY(-50px) rotate(-8.74deg) scale(0.9);
+  transform: translateX(-500px) translateY(-50px) rotate(-8.74deg) scale(0.7);
   opacity: 0.5;
 }
 
@@ -77,8 +77,8 @@
   background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
   border: 2px solid white; /* 흰색 테두리 */
   color: white;
-  padding: 10px 20px; /* 버튼 크기 조정 */
-  font-size: 16px;
+  padding: 6px 20px; /* 버튼 크기 조정 */
+  font-size: 19px;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -95,16 +95,19 @@
 }
 
 .h1 {
-  font-size: 50px;
-  padding-top: 20px;
+  font-size: 54px;
+  padding-top: -5px;
   color: white;
   font-family: "Krona One", sans-serif;
 }
 
 .h2 {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 24px;
+  color: gray;
+  font-weight: 600;
+  line-height: 1.7;
   font-family: "Pretendard", sans-serif;
+  transform: translateY(-30px);
 }
 
 hr {
@@ -112,8 +115,8 @@ hr {
   z-index: 1;
   pointer-events: none;
   transform: translateY(40px);
-  width: 85vw; /* 화면 너비의 80%로 설정 */
-  max-width: 1400px; /* 최대 길이 제한 */
+  width: 80vw; /* 화면 너비의 80%로 설정 */
+  max-width: 1200px; /* 최대 길이 제한 */
   height: 1px;
-  background-color: white;
+  background-color: rgb(190, 190, 190);
 }
