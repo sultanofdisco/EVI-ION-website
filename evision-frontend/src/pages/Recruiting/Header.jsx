@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header-container">
 
-      <div className="ev h1">EVI$ION</div>
+      <div className="ev h1">EVI$ION 7.5th</div>
 
       <div className="bk">
         <img src={bigkey} alt="Big Key Logo" className="biglogo" />

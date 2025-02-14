@@ -99,6 +99,8 @@
   padding-top: -5px;
   color: white;
   font-family: "Krona One", sans-serif;
+  display: inline; /* 블록 요소가 아니라 인라인 요소로 변경 */
+  white-space: nowrap; 
 }
 
 .h2 {
