@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Header.css";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isApplicationPeriod, setApplicationPeriod] = useState(true);
 
@@ -38,6 +40,7 @@ const Header = () => {
           <li onClick={() => scrollToSection("achieve")}>수상 실적 및 기록</li>
           <li onClick={() => scrollToSection("activity")}>활동 기록</li>
           <li onClick={() => scrollToSection("faq")}>자주 묻는 질문</li>
+          <li onClick={() => navigate("/login")}>로그인</li>
         </ul>
 
         <button className="nav-toggle" onClick={toggleMenu}>

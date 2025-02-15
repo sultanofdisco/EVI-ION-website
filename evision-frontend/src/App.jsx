@@ -13,6 +13,10 @@ import FAQ from './pages/Main/FAQ';
 import ApplyPage from './pages/Applying/ApplyPage';
 import Recruiting from "./pages/Recruiting/Recruiting";
 import Admin from './pages/Admin/admin';
+import Login from './pages/Login/Login';
+import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext";
+
 
 function MainPage() {
 
@@ -37,15 +41,22 @@ function MainPage() {
 
 function App() {
   return (
+  <AuthProvider>
     <Router>
       <ScrollToTop /> {/* 페이지 변경 시 최상단 이동 */}
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/apply" element={<ApplyPage />} /> {/* ApplyPage.jsx 연결 */}
+        <Route path="/apply" element={<ApplyPage />} /> 
         <Route path="/recruiting" element={<Recruiting />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          } />
       </Routes>
     </Router>
+  </AuthProvider>
   );
 }
 
