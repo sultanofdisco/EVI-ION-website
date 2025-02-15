@@ -1,8 +1,9 @@
-.Form {
-  margin: -200px 20px auto;
+.Form{
+  margin: -250px 20px auto;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
+  max-width: 800px;
   padding: 200px;
   padding-left: 0;
   padding-right: 0;
@@ -12,28 +13,27 @@
 
 
 .ApplyHeader {
+
   text-align: left;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-left: 70px;
-  padding-top: 30px;
-  margin-bottom: -90px;
-  margin-top: -50px;
-  transform-origin: top left; /* 원래 위치 유지 */
-  transform: scale(calc(100vw / 1920)); /* 1920px 기준으로 전체 크기만 줄어듦 */
+  max-width: 800px;
+  width: 80%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .ApplyHeader > h1 {
   color: white;
-  font-size: 50px;
-  font-family: Pretendard, sans-serif;
+  font-size: clamp(20px, 8vw, 40px);
+  font-family: 'Pretendard', sans-serif;
+  font-family: Pretendard;
   text-align: left;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.2px;
   word-wrap: break-word;
-  padding-left: 100px;
+
   padding-right: 0;
   margin-left: 0;
 }
@@ -60,8 +60,9 @@
   margin-top: 50px;
   text-align: left;
   color: white;
-  font-size: clamp(10px, 3vw, 27px);
-  font-family: Pretendard;
+  font-size: 3.5vw;
+  font-size: clamp(10px, 3vw, 19px);
+  font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 1px;
@@ -84,7 +85,7 @@
   background-color: #5F5F5F;
   border-radius: 12px;
   color: #ffffff;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 15px);
   font-family:'Pretendard', sans-serif;
   font-weight: 300;
   box-sizing: border-box;
@@ -101,8 +102,8 @@
   height: clamp(140px, 30vw, 600px);
   background-color: #5F5F5F;
   border-radius: 12px;
-  color: #ffffff;
-  font-size: clamp(14px, 2vw, 18px);
+  color: #ffffff;   /* 질문 입력시 색 변화 */
+  font-size: clamp(14px, 2vw, 15px);
   font-family:'Pretendard', sans-serif;
   font-weight: 400;
   box-sizing: border-box;

@@ -3,21 +3,22 @@
   padding: 50px 0px;                      /* 이 부분을 일정하게 해야 이동이 일정 */
   text-align: left;                       /* 왼쪽 정렬 */
   font-family: "Krona One", sans-serif;
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 300px 0;                        /* about section 자체의 상단 여백 */
 }
 
 .about-section h2 {
-  font-size: 40px;
+  font-size: 37px;
   font-weight: bold;
-  margin-bottom: 20px;
-  margin-left: 1px;
+  margin-bottom: 15px;
+  margin-left: 5px;
 }
 
 .about-section p {
-  font-size: 22px;
-  font-family:'Pretendard', sans-serif;
-  font-weight: bold;
+  font-size: 20px;
+  color:#d3d3d3;
+  font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 550;
   line-height: 2;                         /* 글자 줄간 간격 */
   margin: 0;                              /* 불필요한 마진 제거 */
   padding: 10px;                         
@@ -25,6 +26,7 @@
 }
 
 .instagram-link {
+  color: #d3d3d3;
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
@@ -32,18 +34,18 @@
   transition: color 0.3s ease, border-color 0.3s ease;
   font-size: 20px;
   margin-top: 60px;
-  margin-left: 680px;
+  margin-left: 760px;
   flex-wrap: nowrap;
 }
 
 .instagram-link:hover {
-  color: #1eb46c;
-  border-color: #1eb46c;
+  color: #1d903e;
+  border-color: #1d903e;
 }
 
 .about-section p:nth-of-type(1) {
   color: #1d903e;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 .tag-container {

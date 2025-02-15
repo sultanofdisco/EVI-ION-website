@@ -1,148 +1,117 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.header_logo,
-.menu {
-  flex: 1;
+.nav-bar {
   display: flex;
-}
-
-.header {
-  top: 0;
-  left: 0;
-  width: calc(100% - 17px);
-  height: 12%;
-  padding: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* 중앙 정렬 */
   background: linear-gradient(
     to top,
-    #000000,
-    #061006,
-    #0a1e0a,
-    #0f3010,
-    #123d12,
-    #145214
+    #000000,      
+    #061006,  
+    #0a1e0a,  
+    #0f3010, 
+    #123d12,   
+    #145214  
   );
+  padding: 15px 0;
+  color: white;
   position: fixed;
+  width: 99%;
+  top: 0;
+  left: 0;
   z-index: 100;
 }
 
-.header_logo {
+.nav-container {
   display: flex;
-  color: white;
   align-items: center;
-  margin-left: 25px;
+  justify-content: space-between;
+  max-width: 1200px; /* 중앙에 정렬할 최대 너비 */
+  width: 100%;
+  padding: 0 20px; /* 좌우 여백 추가 */
 }
 
-.logo {
-  height: 54px;
-  object-fit: contain;
-  transform: rotate(-35.51deg) scale(0.85);
+.nav-logo {
+  display: flex;
+  align-items: center; /* 로고와 텍스트 수직 정렬 */
+  gap: 10px; /* 로고와 텍스트 사이 간격 */
+  text-decoration: none;
 }
 
 .logo-text {
-  font-size: 28px;
-  font-family: "Krona One", sans-serif;
+  font-size: 22px;
   font-weight: bold;
+  color: white;
+  font-family: "Krona One", sans-serif;
   letter-spacing: 2px;
 }
 
-.menu {
-  display: flex;
-  padding: 0 6px;
+.nav-logo img {
+  height: 50px;
+  transform: rotate(-35.51deg) scale(0.8);
 }
 
-.menu ul {
+.nav-menu {
   display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
   list-style: none;
+  font-size: 16px;
+  color: rgb(204, 204, 204);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-.menu ul li {
-  margin: 0 20px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.menu ul li a:hover {
-  color: #349e40;
-}
-
-.recruiting-wrapper {
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-.recruiting-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px;
-  border: 2px solid white;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+.nav-menu li {
   cursor: pointer;
-  height: 40px;
-  box-sizing: border-box;
-  line-height: 1;
+  transition: 0.3s;
 }
 
-.recruiting-btn:hover {
-  background-color: #349e40;
+.nav-menu li:hover {
+  color: #1d903e;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;;
+  color: white;
+  padding: 6px 16px;
+  font-weight: 550;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: white;
   color: black;
-  border-color: #349e40;
 }
 
-.hamburger {
+.nav-toggle {
   display: none;
-  font-size: 24px;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
-  margin-right: 20px;
 }
 
-@media (max-width: 1530px) {
-  .menu {
+.nav-toggle img {
+  height: 30px;
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 768px) {
+  .nav-menu {
     display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .menu.open {
-    display: flex;
     flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
     position: absolute;
-    top: 60px;
-    right: 10px;
-    background: #0a1e0a;
+    top: 70px;
+    right: 0;
+    width: 200px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 5px;
   }
 
-  .menu.open ul {
-    flex-direction: column;
-    align-items: center;
+  .nav-menu.open {
+    display: flex;
   }
 
-  .menu.open ul li {
-    margin: 10px 0;
+  .nav-toggle {
+    display: block;
   }
 }

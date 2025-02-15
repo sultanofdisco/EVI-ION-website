@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "./admin.css";
 import axios from "axios";
-import keyImage from "../../assets/logo.png"; // 열쇠 이미지 경로
+import Modal from "./Modal";
+import "./admin.css";
 
 const Admin = () => {
-  const [applicants, setApplicants] = useState([]); // 지원자 목록 상태
+  const [applicants, setApplicants] = useState([]);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  // 백엔드에서 데이터 가져오기
   useEffect(() => {
     const fetchApplicants = async () => {
       try {
         const response = await axios.get("http://localhost:3001/admin");
         if (response.data.success) {
-          setApplicants(response.data.data); // Extract data correctly
-        } else {
-          console.error("데이터 로드 실패:", response.data.message);
+          setApplicants(response.data.data);
         }
       } catch (error) {
         console.error("데이터 가져오기 실패:", error.message);
@@ -26,16 +25,9 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      {/* 열쇠 이미지 */}
-      <img src={keyImage} alt="Key" className="key-image" />
-
-      {/* 관리자 페이지 제목 */}
       <h1 className="admin-title">관리자 페이지</h1>
-
-      {/* 지원 목록 제목 */}
       <h2 className="admin-subtitle">지원 목록</h2>
 
-      {/* 지원자 목록 테이블 */}
       <div className="table-container">
         <table className="applicants-table">
           <thead>
@@ -58,8 +50,24 @@ const Admin = () => {
                   <td>{applicant.student_number}</td>
                   <td>{applicant.phone_number}</td>
                   <td>{applicant.email}</td>
-                  <td>{applicant.A1}</td>
-                  <td>{applicant.A2}</td>
+                  <td
+                    className="clickable"
+                    onClick={() => {
+                      setSelectedAnswer(applicant.A1);
+                      setModalOpen(true);
+                    }}
+                  >
+                    {applicant.A1.length > 50 ? `${applicant.A1.substring(0, 50)}...` : applicant.A1}
+                  </td>
+                  <td
+                    className="clickable"
+                    onClick={() => {
+                      setSelectedAnswer(applicant.A2);
+                      setModalOpen(true);
+                    }}
+                  >
+                    {applicant.A2.length > 50 ? `${applicant.A2.substring(0, 50)}...` : applicant.A2}
+                  </td>
                 </tr>
               ))
             ) : (
@@ -72,6 +80,9 @@ const Admin = () => {
           </tbody>
         </table>
       </div>
+
+      {/* 모달 팝업 */}
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} content={selectedAnswer} title="전체 보기" />
     </div>
   );
 };

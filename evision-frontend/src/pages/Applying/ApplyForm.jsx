@@ -47,7 +47,6 @@ const ApplyForm = () => {
 
     return (
         <>
-            <ApplyHeader />
             <div className='ApplyHeader'>
                 <h1>지원서 작성</h1>
             </div>

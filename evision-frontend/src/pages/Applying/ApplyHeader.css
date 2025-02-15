@@ -1,38 +1,44 @@
 .apply-header-container {
   display: flex;
-  justify-content: space-between; /* 좌우 배치 */
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1500px;
-  padding: 2vh 5vw; /* 반응형 여백 */
-  position: absolute;
-  margin: 0 auto;
+  max-width: 1300px; /* 중앙에 정렬할 최대 너비 */
+  width: 100%;
+  padding: 0 auto; /* 최대 너비 유지 */
+  position: relative; /* 화면 축소/확대 시에도 위치 유지 */
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
+  transform: translateX(-32%); /* 정확한 중앙 정렬 */
+  overflow: visible;
 }
-
 .apply-logo {
-  height: clamp(50px, 8vw, 80px); /* 크기 자동 조절 */
-  z-index: 100;
-  transform: rotate(-35.51deg) scale(0.85);
-  margin-left: min(10vw, 250px); /* 작은 화면에서도 비율 유지 */
+  height: 80px;
+  transform: rotate(-35.51deg) scale(0.75);
+  margin-top: 10px;
 }
 
 .main-btn {
-  z-index: 10;
+  z-index: 99999;
+  position : fixded;
   font-family: "Pretendard", sans-serif;
-  background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
+  background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid white;
   color: white;
-  padding: clamp(5px, 1.5vh, 10px) clamp(10px, 2vw, 20px);
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: bold;
+  padding: 20px 20px; /* 버튼 크기 조정 */
+  font-size: 15px;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   text-decoration: none;
-  margin-top: clamp(10px, 3vh, 40px);
+  margin-top: 40px;
+  margin-right: -100px;
+  white-space: nowrap;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
 }
 
 .main-btn:hover {

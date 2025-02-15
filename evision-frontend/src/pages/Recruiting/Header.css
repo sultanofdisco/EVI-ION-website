@@ -1,7 +1,5 @@
 .header-container {
-  display: grid; /* 로고와 버튼을 가로로 배치 */
-  grid-template-rows: auto;
-  width: 1500px;
+  display: grid; 
   grid-template-rows: repeat(4, 60px);
   grid-template-columns: repeat(9, 1fr);
   grid-template-areas:
@@ -10,8 +8,13 @@
     "li li li li li li li li ."
     "li li li li li li li li .";
   gap: 60px;
-  padding-top: 20px;
-  padding-left: 160px;
+  margin: 0 auto;
+  width: 1400px; /* 너비를 px 단위로 고정 */
+  min-width: 360px;
+  max-width: 100%;
+  transform: translateX(80px) translateY(-70px);
+  position: relative;
+  pointer-events: none;
 }
 
 .lk {
@@ -48,24 +51,41 @@
 
 .biglogo {
   width: 350px;
+  position: absolute;
   margin-top: 20px;
-  margin-right: 20px;
-  transform: translateY(-100px) rotate(-8.74deg);
+  margin-right: 100px;
+  transform: translateX(-500px) translateY(-50px) rotate(-8.74deg) scale(0.7);
   opacity: 0.5;
 }
 
+@media screen and (max-width: 1000px) {
+  .biglogo {
+    display: none; /* 특정 크기 이하에서 완전히 숨김 */
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-resolution: 1.5dppx) {
+  .biglogo {
+    display: none;
+  }
+}
+
+
 .main-btn {
-  z-index: 10;
+  z-index: 100;
   font-family: "Pretendard", sans-serif;
   background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
   border: 2px solid white; /* 흰색 테두리 */
   color: white;
-  padding: 10px 20px; /* 버튼 크기 조정 */
-  font-size: 16px;
+  padding: 6px 20px; /* 버튼 크기 조정 */
+  font-size: 19px;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  text-decoration: none; /* 밑줄 제거 */
+  text-decoration: none;
+  position: fixed; /* 화면 크기 변화에 영향을 받지 않도록 고정 */
+  bottom: 20px;
+  right: 20px;
 }
 
 .main-btn:hover {
@@ -75,22 +95,30 @@
 }
 
 .h1 {
-  font-size: 50px;
-  padding-top: 20px;
+  font-size: 54px;
+  padding-top: -5px;
   color: white;
   font-family: "Krona One", sans-serif;
+  display: inline; /* 블록 요소가 아니라 인라인 요소로 변경 */
+  white-space: nowrap; 
 }
 
 .h2 {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 24px;
+  color: gray;
+  font-weight: 600;
+  line-height: 1.7;
   font-family: "Pretendard", sans-serif;
+  transform: translateY(-30px);
 }
 
 hr {
-  opacity: 0.5;
-  transform: translateY(20px);
-  width: 100%;
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(40px);
+  width: 80vw; /* 화면 너비의 80%로 설정 */
+  max-width: 1200px; /* 최대 길이 제한 */
   height: 1px;
-  background-color: white;
+  background-color: rgb(190, 190, 190);
 }

@@ -8,42 +8,47 @@
 }
 
 .faq-section h2 {
-  font-size: 40px;
+  font-size: 37px;
   font-weight: bold;
   font-family: "Krona One", sans-serif;
   margin-bottom: 60px;
   text-align: right;
-  margin-right: 7px;
+  margin-right: 0px;
 }
 
 .faq-item {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 30px;
-  width: 1060px;
+  width: 1000px;
   margin-bottom: 30px;
   text-align: left;
 }
 
 .faq-item h3 {
-  font-size: 24px;
-  color: white;
+  font-size: 21px;
+  color: #d9d9d9;
   margin-bottom: 10px;
 }
 
 .faq-item p {
-  font-size: 18px;
-  color: white;
+  font-size: 16px;
+  color: rgb(165, 165, 165);
   line-height: 1.8;
 }
 
 .faq-note {
   font-size: 16px;
-  color: #a1d19e;
+  color: #177223;
   margin-top: 20px;
 }
 
 .call {
-padding-top: 10%;
+padding-top: 20%;
 line-height: 1.8;
+}
+.call pre{
+  font-size: 16px;
+  font-family:'Pretendard', sans-serif;
+  line-height: 2;
 }

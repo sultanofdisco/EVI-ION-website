@@ -9,9 +9,6 @@ const ReHeader = () => {
       <Link to="/" className="lk">
         <img src={littlekey} alt="Little Key Logo" className="re-logo" />
       </Link>
-      <Link to="/" className="main-btn rec">
-        메인으로
-      </Link>
     </div>
   );
 };
