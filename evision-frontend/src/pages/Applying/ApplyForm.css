@@ -1,4 +1,4 @@
-.Form{
+.Form {
   margin: -200px 20px auto;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,10 @@
   padding: 200px;
   padding-left: 0;
   padding-right: 0;
+  transform-origin: top left; /* 원래 위치 유지 */
+  transform: scale(calc(100vw / 1920)); /* 전체 크기만 줄어듦 */
 }
+
 
 .ApplyHeader {
   text-align: left;
@@ -17,22 +20,39 @@
   padding-top: 30px;
   margin-bottom: -90px;
   margin-top: -50px;
+  transform-origin: top left; /* 원래 위치 유지 */
+  transform: scale(calc(100vw / 1920)); /* 1920px 기준으로 전체 크기만 줄어듦 */
 }
 
-.ApplyHeader > h1{
+.ApplyHeader > h1 {
   color: white;
-  font-size: clamp(20px, 8vw, 50px);
-  
-  font-family: Pretendard;
+  font-size: 50px;
+  font-family: Pretendard, sans-serif;
   text-align: left;
   font-weight: 700;
   line-height: 16px;
-  letter-spacing: 0.20px;
+  letter-spacing: 0.2px;
   word-wrap: break-word;
   padding-left: 100px;
   padding-right: 0;
   margin-left: 0;
 }
+
+
+.ApplyHeader > h1 {
+  color: white;
+  font-size: 50px;
+  font-family: Pretendard, sans-serif;
+  text-align: left;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  word-wrap: break-word;
+  padding-left: 100px;
+  padding-right: 0;
+  margin-left: 0;
+}
+
 
 .Form > h3 {
   margin-left: 0.5vw;
@@ -40,7 +60,6 @@
   margin-top: 50px;
   text-align: left;
   color: white;
-  font-size: 3.5vw;
   font-size: clamp(10px, 3vw, 27px);
   font-family: Pretendard;
   font-weight: 700;
@@ -52,6 +71,7 @@
 .Form > section {
   align-items: center;
   width: 100%;
+  transform: scale(calc(100vw / 1920));
 }
 
 /* 인적 사항 입력 텍스트 */
@@ -60,7 +80,7 @@
   width: 100%; 
   height: clamp(25px, 2vw, 50px);
   max-width: 100%; 
-  padding: 23px 15px; /* 칸 안에 입력 설명 */
+  padding: 23px 15px;
   background-color: #5F5F5F;
   border-radius: 12px;
   color: #ffffff;
@@ -81,36 +101,11 @@
   height: clamp(140px, 30vw, 600px);
   background-color: #5F5F5F;
   border-radius: 12px;
-  color: #ffffff;   /* 질문 입력시 색 변화 */
+  color: #ffffff;
   font-size: clamp(14px, 2vw, 18px);
   font-family:'Pretendard', sans-serif;
   font-weight: 400;
   box-sizing: border-box;
   word-wrap: break-word;
   margin-bottom: 10px;
-}
-
-/* 그 입력 박스 안에 글씨 */
-.Form > section > input::placeholder,
-.Form > section > textarea::placeholder {
-  color: #8f8989;
-  font-size: clamp(14px, 2vw, 16px); /* 입력 박스 안 폰트 크기 */
-  font-family:'Pretendard', sans-serif;
-  font-weight: 400;
-  word-wrap: break-word;
-  margin-left: 5vw auto;
-}
-
-.Form .agreement{
-  margin-top: 3vw;
-  margin-bottom: 10vw;
-}
-
-.Form .submit{
-  width: 100%; 
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  word-wrap: break-word;
 }
