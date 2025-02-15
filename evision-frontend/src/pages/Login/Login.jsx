@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h1>로그인</h1>
+      <h1>Login</h1>
       <input
         type="email"
         placeholder="이메일"
