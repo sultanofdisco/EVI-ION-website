@@ -17,6 +17,8 @@ model Applicant {
   A1             String
   A2             String
   createdAt      DateTime @default(now())
+
+  @@map("applicants") // ✅ Supabase의 'applicants' 테이블과 매칭
 }
 
 model admins {
