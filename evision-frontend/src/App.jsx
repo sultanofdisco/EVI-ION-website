@@ -17,6 +17,7 @@ import Admin from './pages/Admin/admin';
 function MainPage() {
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios.get("http://localhost:3001/").then((response)=>{
       console.log("IT WORKED");
     })

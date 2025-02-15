@@ -9,6 +9,12 @@ const Admin = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+   }, []);
+
+  useEffect(() => {
     const fetchApplicants = async () => {
       try {
         const response = await axios.get("http://localhost:3001/admin");

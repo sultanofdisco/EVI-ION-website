@@ -5,13 +5,9 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    
-    // 스크롤 최상단으로 이동
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 50); // 약간의 딜레이 추가 (비동기 렌더링 문제 방지)
-    
-  }, [pathname]);
+    console.log("페이지 이동 감지됨, 최상단으로 스크롤");
+    window.scrollTo(0, 0);
+  }, [pathname]); // pathname 변경될 때 실행
 
   return null;
 };

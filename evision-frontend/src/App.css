@@ -10,8 +10,7 @@ html, body {
   height: 100%;
   background: black;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  overflow-x: hidden; /* 가로 스크롤 없애기 */
-  overflow-y: auto;
+  overflow: unset
 }
 
 /*.container {

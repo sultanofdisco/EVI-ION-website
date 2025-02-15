@@ -22,7 +22,7 @@ const StyledLabel = styled.label`
   display: flex;
   align-items: center;
   user-select: none;
-
+  padding : 70px 10px;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;

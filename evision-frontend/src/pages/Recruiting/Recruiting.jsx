@@ -8,8 +8,14 @@ import ReHeader from "./ReHeader";
 const Recruiting = () => {
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTo(0, 0);
+    document.body.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     axios.get("http://localhost:3001/recruiting").then((response)=>{
       console.log("IT WORKED");
+      window.scrollTo(0, 0)
     })
   }, []);
 
