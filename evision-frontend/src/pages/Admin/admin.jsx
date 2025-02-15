@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "./Modal";
 import "./admin.css";
+import { API_URL } from "../../config"; // ✅ 환경 변수에서 API URL 가져오기
 
 const Admin = () => {
   const [applicants, setApplicants] = useState([]);
@@ -9,20 +10,25 @@ const Admin = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTo(0, 0);
-      document.body.scrollTo(0, 0);
-   }, []);
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTo(0, 0);
+    document.body.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const fetchApplicants = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/admin");
+        const response = await axios.get(`${API_URL}/admin`, {
+          withCredentials: true, // ✅ 쿠키 포함 (로그인 유지)
+        });
+
+        console.log("서버 응답 데이터:", response.data); // ✅ 디버깅 로그
+
         if (response.data.success) {
           setApplicants(response.data.data);
         }
       } catch (error) {
-        console.error("데이터 가져오기 실패:", error.message);
+        console.error("데이터 가져오기 실패:", error.response?.data?.message || error.message);
       }
     };
 
