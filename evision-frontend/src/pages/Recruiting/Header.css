@@ -122,3 +122,55 @@ hr {
   height: 1px;
   background-color: rgb(190, 190, 190);
 }
+
+@media screen and (max-width: 480px) {
+  .header-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* 요소 간 간격 조정 */
+    width: 100%; /* 너비를 100%로 설정 */
+    transform: none; /* 위치 조정 제거 */
+    padding-bottom: 140px;
+  }
+
+  .lk, .rec, .ev, .bk {
+    margin: 0;
+    text-align: center; /* 요소 중앙 정렬 */
+  }
+
+  .biglogo {
+    display: none; /* 모바일에서는 숨김 */
+  }
+
+  .h1 {
+    font-size: 36px; /* 제목 크기 조정 */
+    text-align: left;
+    padding-top: 40px;
+    margin-bottom: -30px;
+  }
+
+  .h2 {
+    font-size: 17px; /* 부제목 크기 축소 */
+    text-align: left;
+    transform: none;
+    padding-bottom: 1px;
+  }
+
+  .main-btn {
+    font-size: 16px; /* 버튼 글씨 크기 조정 */
+    padding: 8px 16px;
+    bottom: 10px; /* 버튼 위치 조정 */
+    right: 10px;
+  }
+
+  hr {
+    width: 90%; /* 가로선 너비 조정 */
+    transform: none;
+  }
+
+  hr {
+    transform: translateY(30px); /* 모바일에서 선을 더 아래로 */
+    margin-left: 13px;
+  }
+}
