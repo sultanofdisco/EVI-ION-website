@@ -1,20 +1,18 @@
 .apply-header-container {
+  margin: -300px auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1300px; /* 중앙에 정렬할 최대 너비 */
-  width: 100%;
-  padding: 0 auto; /* 최대 너비 유지 */
-  position: relative; /* 화면 축소/확대 시에도 위치 유지 */
-  top: 0;
-  left: 50%;
-  transform: translateX(-32%); /* 정확한 중앙 정렬 */
-  overflow: visible;
+  flex-direction: column;
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  padding: 300px 0;
+  transform-origin: top left;
+  transform: scale(calc(100vw / 1920));
 }
+
 .apply-logo {
-  height: 80px;
-  transform: rotate(-35.51deg) scale(0.7);
-  margin-top: 10px;
+  height: clamp(50px, 8vw, 80px);
+  transform: rotate(-35.51deg) scale(0.75);
 }
 
 .main-btn {

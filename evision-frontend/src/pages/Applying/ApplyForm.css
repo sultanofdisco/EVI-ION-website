@@ -1,19 +1,16 @@
 .Form{
-  margin: -250px 20px auto;
+  margin: -300px auto;
   display: flex;
   flex-direction: column;
   width: 80%;
   max-width: 800px;
-  padding: 180px;
-  padding-left: 0;
-  padding-right: 0;
-  transform-origin: top left; /* 원래 위치 유지 */
-  transform: scale(calc(100vw / 1920)); /* 전체 크기만 줄어듦 */
+  padding: 300px 0;
+  transform-origin: top left;
+  transform: scale(calc(100vw / 1920));
 }
 
 
 .ApplyHeader {
-
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -27,28 +24,11 @@
   color: white;
   font-size: clamp(20px, 8vw, 40px);
   font-family: 'Pretendard', sans-serif;
-  font-family: Pretendard;
   text-align: left;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.2px;
   word-wrap: break-word;
-
-  padding-right: 0;
-  margin-left: 0;
-}
-
-
-.ApplyHeader > h1 {
-  color: white;
-  font-size: 47px;
-  font-family: Pretendard, sans-serif;
-  text-align: left;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 0.2px;
-  word-wrap: break-word;
-  padding-left: 0px;
   padding-right: 0;
   margin-left: 0;
 }
@@ -72,11 +52,13 @@
   align-items: center;
   width: 100%;
   transform: scale(calc(100vw / 1920));
+  color: #ffffff; 
 }
 
 /* 인적 사항 입력 텍스트 */
 .Form > section > input {
   align-items: center;
+  border: 0px solid #ccc;
   width: 100%; 
   height: clamp(25px, 2vw, 50px);
   max-width: 100%; 
@@ -84,7 +66,7 @@
   background-color: #5F5F5F;
   border-radius: 12px;
   color: #ffffff;
-  font-size: clamp(14px, 2vw, 15px);
+  font-size: clamp(13px, 2vw, 14px);
   font-family:'Pretendard', sans-serif;
   font-weight: 300;
   box-sizing: border-box;
@@ -96,6 +78,7 @@
 /* 질문 사항 입력 텍스트 */
 .Form > section > textarea {
   align-items: center;
+  border: 0px solid #ccc;
   width: 100%;
   resize: none;
   padding: 15px 20px;
@@ -109,4 +92,98 @@
   box-sizing: border-box;
   word-wrap: break-word;
   margin-bottom: 10px;
+}
+
+.Form > section > ::placeholder {
+  color:rgb(173, 173, 173);
+  font-size: clamp(1px, 2vw, 15px);
+}
+
+@media (max-width: 1024px) {
+  .Form {
+    margin: -150px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 120px 0px;
+    transform: none;
+  }
+
+  .ApplyHeader {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .ApplyHeader > h1 {
+    font-size: clamp(22px, 6vw, 36px);
+  }
+
+  .Form > h3 {
+    font-size: clamp(12px, 4vw, 18px);
+  }
+
+  .Form > section > input,
+  .Form > section > textarea {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .Form {
+    margin: -50px auto;
+    width: 95%;
+    max-width: 500px;
+    padding: 20px 0px;
+  }
+
+  .ApplyHeader > h1 {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  .Form > h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px 0;
+  }
+
+  .Form > section > input {
+    height: 40px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .Form > section > textarea {
+    height: clamp(100px, 25vw, 400px);
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 0px;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .Form > h3 {
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+
+  .Form > section > input {
+    font-size: 13px;
+    height: clamp(40px, 25vw, 40px);
+
+  }
+
+  .Form > section > textarea {
+    font-size: 13px;
+    height: clamp(200px, 25vw, 400px);
+    color:white;
+  }
+
 }

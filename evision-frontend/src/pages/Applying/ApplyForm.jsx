@@ -47,10 +47,8 @@ const ApplyForm = () => {
 
     return (
         <>
-            <div className='ApplyHeader'>
-                <h1>지원서 작성</h1>
-            </div>
             <form className="Form" onSubmit={handleSubmit(onSubmit)}>
+                <h1>지원서 작성</h1>
                 <h3>성명</h3>
                 <section className="inputField">
                     <input
