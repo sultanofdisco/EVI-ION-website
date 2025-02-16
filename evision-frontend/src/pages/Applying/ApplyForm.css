@@ -55,7 +55,6 @@
 
 
 .Form > h3 {
-  margin-left: 0.5vw;
   margin-bottom: 20px;
   margin-top: 50px;
   text-align: left;
@@ -91,6 +90,7 @@
   box-sizing: border-box;
   word-wrap: break-word;
   margin-bottom: 10px;
+  margin: 0px
 }
 
 /* 질문 사항 입력 텍스트 */
