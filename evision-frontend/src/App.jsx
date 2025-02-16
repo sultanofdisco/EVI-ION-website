@@ -22,7 +22,7 @@ function MainPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axios.get("http://localhost:3001/").then((response)=>{
+    axios.get("http://54.180.97.182:3001").then((response)=>{
       console.log("IT WORKED");
     })
   }, []);

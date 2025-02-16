@@ -27,7 +27,7 @@ const ApplyForm = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:3001/apply', {
+            const response = await axios.post('http://54.180.97.182:3001/apply', {
                 student_number: data.studentID,
                 name: data.name,
                 phone_number: data.phoneNumber,
