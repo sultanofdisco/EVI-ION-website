@@ -56,3 +56,18 @@ html, body {
   scroll-margin-top: 100px; /* 100px만큼 위쪽 여백 추가 */
 }
 
+@media screen and (max-width: 480px) {
+  .container {
+    min-height: auto !important; /* 모바일에서만 자동 조정 */
+  }
+
+  .faq-section {
+    margin-bottom: 0px; /* 마지막 섹션 아래 여백 제거 */
+    padding-bottom: 30px; /* 적당한 여백만 유지 */
+  }
+
+  body {
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    overflow-y: auto; /* 세로 스크롤 자동 조정 */
+  }
+}

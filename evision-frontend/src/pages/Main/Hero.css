@@ -17,6 +17,28 @@
   transform: translateY(25%);
 }
 
+/* 반응형 h2 폰트 크기 조정 */
+@media screen and (max-width: 1024px) {
+  .hero h2 {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h2 {
+    font-size: 36px;
+    margin-top: 200px;
+  }
+}
+
+
 .hero img {
   width: 122%;
   height: 130%;
@@ -26,6 +48,16 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+/* 반응형 이미지 크기 조정 */
+@media screen and (max-width: 480px) {
+  .hero img {
+    height: 270px;
+    width: 300px;
+    margin-top: 10px;
+  }
+}
+
 
 .hero p {
   display: inline;
@@ -37,6 +69,19 @@
   letter-spacing: 1px;
   color: white;
   top: 30px; 
+}
+
+/* 반응형 p 태그 폰트 크기 조정 */
+@media screen and (max-width: 768px) {
+  .hero p {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero p {
+    font-size: 18px;
+  }
 }
 
 .hero p:nth-of-type(2) {

@@ -9,7 +9,7 @@ function Activity() {
   return (
     <section className="activity-section" id="activity">
       <h2>주요 활동</h2>
-      <p>EVI$ION은 다양한 프로젝트와 이벤트를 통해 역량을 키우고 있습니다.</p> {/* 설명 추가 */}
+      <p>EVI$ION은 다양한 프로젝트와 강의를 통해 역량을 키우고 있습니다.</p> {/* 설명 추가 */}
 
       <div className="activity-container">
         <div className="activity-box">
