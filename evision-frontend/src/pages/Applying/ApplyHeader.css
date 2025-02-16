@@ -1,18 +1,19 @@
 .apply-header-container {
   margin: -300px auto;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  position: relative;
-  width: 70%;
+  width: 80%;
   max-width: 800px;
   padding: 300px 0;
   transform-origin: top left;
   transform: scale(calc(100vw / 1920));
 }
 
-.apply-logo {
-  height: clamp(50px, 8vw, 80px);
+.apply-logo {/* 부모 요소를 기준으로 고정 */
+  position: relative;
   transform: rotate(-35.51deg) scale(0.75);
+  height: clamp(50px, 8vw, 80px);
 }
 
 .main-btn {
@@ -45,3 +46,7 @@
   transform: scale(1.05);
 }
 
+.lk2 {
+  margin-top: 30px;
+  display: flex;
+}
