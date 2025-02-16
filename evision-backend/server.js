@@ -17,7 +17,7 @@ const app = express();
 
 // ✅ CORS 설정 (프론트엔드 도메인 허용)
 app.use(cors({
-    origin: "http://localhost:5173",  // ✅ 프론트엔드 주소로 설정 (와일드카드 '*' 금지)
+    origin: ["http://localhost:5173","http://evision-web.com"],  // ✅ 프론트엔드 주소로 설정 (와일드카드 '*' 금지)
     credentials: true  // ✅ 쿠키 및 인증 정보 포함 허용
 }));
 
