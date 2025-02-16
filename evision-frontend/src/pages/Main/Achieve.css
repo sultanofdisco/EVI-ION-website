@@ -88,3 +88,62 @@
   color:#d3d3d3;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+
+@media (max-width: 480px) {
+  .achieve-section {
+    max-width: 100%;
+    padding: 0px 15px;
+    margin: -230px auto 0 auto; /* 상단 여백 조정 */
+  }
+
+  .achieve-section h2 {
+    font-size: 28px; /* 모바일에서 크기 축소 */
+    text-align: left; /* 가운데 정렬 */
+    margin-bottom: 20px; /* 제목과 타임라인 간 여백 조정 */
+    margin-right: 120px; /* 오른쪽 마진 제거 */
+    padding-bottom: 0;
+    padding-left: 20px;
+  }
+
+  .timeline {
+    border-right: none; /* 모바일에서는 우측 선 제거 */
+    border-left: 4px solid white; /* 왼쪽 선으로 변경 */
+    padding-left: 20px;
+    margin-left: 27px;
+    padding-right: 0;
+    margin-right: 0;
+    transform: none;
+    
+  }
+
+  .event {
+    text-align: left !important; /* 모든 이벤트 왼쪽 정렬 */
+    padding-left: 10px;
+    padding-right: 0;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* 모바일에서 동그라미 위치 조정 */
+  .event::before {
+    left: -28px !important; /* 선의 왼쪽으로 이동 */
+    right: auto !important;
+    top: 5px !important;
+  }
+
+  /* 연도 텍스트 크기 조정 */
+  .year {
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-left: -50px;
+  }
+
+  /* 본문 텍스트 크기 조정 */
+  .details p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-left: -50px;
+  }
+}
