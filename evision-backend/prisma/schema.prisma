@@ -14,7 +14,7 @@ model Applicant {
   name           String
   student_number String   @unique
   phone_number   String
-  email          String
+  email          String   @unique // ✅ 이메일 중복 방지
   A1             String
   A2             String
   createdAt      DateTime @default(now())
@@ -22,12 +22,13 @@ model Applicant {
   @@map("applicants") // ✅ Supabase의 'applicants' 테이블과 매칭
 }
 
-model admins {
+model Admin {
   id        String   @id @default(uuid())
-  email     String   @unique // ✅ 관리자 계정은 이메일로 로그인
+  email     String   @unique // ✅ 이메일 중복 방지
   password  String // ✅ 해싱된 비밀번호 저장
-  createdAt DateTime @default(now()) // ✅ 계정 생성 시간
-  role      String   @default("user")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt // ✅ 최근 업데이트 시간 저장
+  role      String   @default("user") // ✅ 기본 역할 지정
 
-  @@map("admins") // ✅ 테이블명을 'admins'로 강제 설정
+  @@map("admins") // ✅ Supabase에서 'admins' 테이블로 저장
 }

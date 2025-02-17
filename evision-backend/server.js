@@ -15,12 +15,19 @@ import authRoutes from './routes/auth.js';
 dotenv.config();
 const app = express();
 
-// ✅ CORS 설정 (프론트엔드 도메인 허용)
+// ✅ CORS 설정 (모든 출처 허용)
 app.use(cors({
-    origin: ["http://localhost:5173","http://evision-web.com"],  // ✅ 프론트엔드 주소로 설정 (와일드카드 '*' 금지)
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true  // ✅ 쿠키 및 인증 정보 포함 허용
+    origin: "*",  // ✅ 모든 출처에서 접근 가능
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // ✅ OPTIONS 추가 (Preflight 요청 해결)
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']  // ✅ Authorization 헤더 추가
 }));
+
+// ✅ 요청이 올 때마다 로그 찍기 (프론트 요청 확인)
+app.use((req, res, next) => {
+    console.log(`📡 [${req.method}] 요청 수신: ${req.originalUrl}`);
+    next();
+});
 
 // ✅ 미들웨어 설정
 app.use(express.json());
@@ -36,13 +43,15 @@ app.use(express.static(path.join(path.resolve(), 'public')));
 
 // ✅ Supabase 연결 확인 (테스트용)
 app.get('/health', async (req, res) => {
-  try {
-    const { data, error } = await supabase.from('users').select('*').limit(1);
-    if (error) throw error;
-    res.json({ success: true, message: 'Supabase 연결 성공', data });
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Supabase 연결 실패', error: error.message });
-  }
+    try {
+        console.log("📡 `/health` 엔드포인트 요청 감지");
+        const { data, error } = await supabase.from('users').select('*').limit(1);
+        if (error) throw error;
+        res.json({ success: true, message: '✅ Supabase 연결 성공', data });
+    } catch (error) {
+        console.error('❌ Supabase 연결 실패:', error.message);
+        res.status(500).json({ success: false, message: '❌ Supabase 연결 실패', error: error.message });
+    }
 });
 
 // ✅ 라우트 추가
@@ -54,17 +63,27 @@ app.use('/', mainRoutes);
 
 // ✅ 기본 페이지 (서버 상태 확인)
 app.get('/', (req, res) => {
-  res.json({ success: true, message: "EVI$ION 백엔드 서버가 정상적으로 실행 중입니다!" });
+    console.log("📡 `/` 엔드포인트 요청 감지");
+    res.json({ success: true, message: "🚀 EVI$ION 백엔드 서버가 정상적으로 실행 중입니다!" });
 });
 
-// ✅ 오류 핸들링 미들웨어
+// ✅ 오류 핸들링 미들웨어 개선
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: '서버 내부 오류 발생' });
+    console.error('❌ 서버 오류:', err.stack);
+    res.status(err.status || 500).json({ 
+        success: false,
+        message: err.message || '서버 내부 오류 발생'
+    });
 });
 
-// ✅ 서버 실행
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+// ✅ 서버 실행 (외부 접근 가능하도록 0.0.0.0 설정)
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+    console.log(`🔗 API 테스트: http://localhost:${PORT}/`);
+    console.log(`🔗 API 테스트 (외부 접근): http://54.180.97.182:${PORT}/`);
+});
+app.use((req, res, next) => {
+  console.log(`📡 [${req.method}] 요청 수신: ${req.originalUrl}`);
+  next();
 });
