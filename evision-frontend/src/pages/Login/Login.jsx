@@ -18,12 +18,16 @@ const Login = () => {
     }
 
     console.log("📨 로그인 요청 이메일:", email);
+    console.log("🌐 API 요청 URL:", `${API_URL}/auth/login`);  // ✅ API URL 출력 확인
 
     try {
       const response = await axios.post(
-        `${API_URL}/auth/login`,  // ✅ 로그인 API 경로 수정
+        `${API_URL}/auth/login`,
         { email, password },
-        { withCredentials: true }  // ✅ CORS 문제 방지
+        {
+          headers: { "Content-Type": "application/json" },  // ✅ 명시적 Content-Type 추가
+          withCredentials: true  // ✅ CORS 문제 방지 (백엔드에서 credentials 설정 필수)
+        }
       );
 
       console.log("✅ 서버 응답 데이터:", response.data);

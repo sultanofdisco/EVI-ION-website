@@ -23,7 +23,7 @@ jobs:
       - name: Node.js 설정
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       - name: 의존성 설치
         working-directory: evision-backend

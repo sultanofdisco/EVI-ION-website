@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-deploy:
@@ -36,6 +37,7 @@ jobs:
           CI: false
         run: |
           npm run build || { echo "Build failed"; exit 1; }
+          
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -45,7 +47,6 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Deploy to S3
-        run: aws s3 sync ./evision-frontend/dist s3://evision-front --delete
+        run: aws s3 sync ./evision-frontend/dist s3://evision-web.com --delete
 
-      - name: Invalidate CloudFront cache for index.html only
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+
