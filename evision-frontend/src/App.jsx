@@ -14,10 +14,12 @@ import Admin from './pages/Admin/admin';
 import Login from './pages/Login/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
+import PosterPopup from "./pages/poster";
 
 function MainPage() {
   return (
     <div className="container">
+      <PosterPopup />
       <Header />
       <Hero />
       <About />
