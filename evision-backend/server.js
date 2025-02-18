@@ -14,7 +14,6 @@ import authRoutes from "./routes/auth.js";
 
 const app = express();
 
-<<<<<<< HEAD
 // ✅ CORS 설정 (쿠키 포함)
 app.use(
   cors({
@@ -28,15 +27,6 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization", "Accept", "X-Requested-With"],
   })
 );
-=======
-// ✅ CORS 설정
-app.use(cors({
-    origin: ["http://localhost:5173", "http://evision-web.com"],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
->>>>>>> a8e18e7ab2adaf6d79fc33cb084ec65517c581b4
 
 app.options("*", cors()); // Preflight 요청 처리
 

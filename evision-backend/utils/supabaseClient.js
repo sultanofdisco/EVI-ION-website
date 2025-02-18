@@ -1,15 +1,17 @@
 import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
 
-dotenv.config();  // ✅ 환경변수 로드
+// ✅ Vite에서는 `import.meta.env`를 사용해야 환경 변수를 읽을 수 있음
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE;  // ✅ 서비스 역할 키 사용
+if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error("❌ Supabase 환경 변수가 제대로 로드되지 않았습니다.");
+}
 
 console.log("✅ Supabase URL:", supabaseUrl);
-console.log("✅ Supabase Service Role Key:", supabaseServiceRoleKey ? "Loaded" : "Not Loaded!");
+console.log("✅ Supabase Anon Key:", supabaseAnonKey ? "Loaded" : "Not Loaded!");
 
-const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     auth: { persistSession: false }
 });
 
