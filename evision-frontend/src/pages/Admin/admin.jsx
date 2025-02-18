@@ -17,8 +17,14 @@ const Admin = () => {
 
   useEffect(() => {
     const fetchApplicants = async () => {
+      const {data, error} = await supabase.auth.getSession();
+      const token = data.session.access_token;
+
       try {
-        const response = await axios.get(`${API_URL}/admin`, {
+          const response = await axios.get(`${API_URL}/admin`, {
+            headers: {
+              "Authorization" : `Bearer ${token}`
+            },
           withCredentials: true, // ✅ 쿠키 포함 (로그인 유지)
         });
 
