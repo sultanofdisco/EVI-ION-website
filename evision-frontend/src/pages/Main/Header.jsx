@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Header.css";
+import logo from "../../assets/logo.png";
+import hamburgerBar from "../../assets/hamburgerBar.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const Header = () => {
     <nav className="nav-bar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <img src="/src/assets/logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
           <span className="logo-text">EVI$ION</span>
         </Link>
 
@@ -45,7 +47,7 @@ const Header = () => {
 
         <button className="nav-toggle" onClick={toggleMenu}>
           <img
-            src={isMenuOpen ? "/src/assets/hamburgerBar.png" : "/src/assets/hamburgerBar.png"}
+            src={hamburgerBar}
             alt="Toggle Menu"
           />
         </button>

@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 480px) {
   .hero h2 {
-    font-size: 36px;
+    font-size: 50px;
     margin-top: 200px;
   }
 }
@@ -76,11 +76,19 @@
   .hero p {
     font-size: 22px;
   }
+
+  .hero img {
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .hero p {
     font-size: 18px;
+  }
+
+  .hero img {
+    height: 250px;
   }
 }
 
