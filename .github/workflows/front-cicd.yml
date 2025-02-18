@@ -47,7 +47,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Deploy to S3
-        run: aws s3 sync ./evision-web.com/dist s3://evision-front --delete
+        run: aws s3 sync ./evision-frontend/dist s3://evision-web.com --delete
 
       - name: Invalidate CloudFront cache for index.html only
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
