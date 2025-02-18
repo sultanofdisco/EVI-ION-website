@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { API_URL } from "../../config";
+import { API_URL } from "../../config";  // ✅ API_URL 가져오기
 import "./Login.css";
 
 const Login = () => {
@@ -17,16 +17,16 @@ const Login = () => {
       return;
     }
 
-    console.log("로그인 요청 이메일:", email);
+    console.log("📨 로그인 요청 이메일:", email);
 
     try {
       const response = await axios.post(
-        `${API_URL}/login`, 
+        `${API_URL}/auth/login`,  // ✅ 로그인 API 경로 수정
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true }  // ✅ CORS 문제 방지
       );
 
-      console.log("서버 응답 데이터:", response.data);
+      console.log("✅ 서버 응답 데이터:", response.data);
 
       if (response.data.role === "admin") {
         login(response.data);
@@ -38,8 +38,8 @@ const Login = () => {
         alert("로그인 성공!");
       }
     } catch (error) {
-      console.error("로그인 실패:", error.response?.data?.message || error.message);
-      alert("로그인 실패: 이메일 또는 비밀번호를 확인해주세요.");
+      console.error("❌ 로그인 실패:", error.response?.data?.message || error.message);
+      alert(`로그인 실패: ${error.response?.data?.message || "이메일 또는 비밀번호를 확인해주세요."}`);
     }
   };
 
