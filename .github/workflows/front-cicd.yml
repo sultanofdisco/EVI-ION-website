@@ -37,7 +37,7 @@ jobs:
           CI: false
         run: |
           npm run build || { echo "Build failed"; exit 1; }
-          ls -al
+          
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
