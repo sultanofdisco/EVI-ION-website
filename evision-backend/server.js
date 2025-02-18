@@ -20,7 +20,7 @@ const app = express();
 
 // ✅ CORS 설정
 app.use(cors({
-    origin: ["http://localhost:5173", "http://evision-web.com.s3-website.ap-northeast-2.amazonaws.com"],
+    origin: ["http://localhost:5173", "http://evision-web.com"],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
