@@ -97,6 +97,7 @@
   }
 
   .achieve-section h2 {
+    white-space: nowrap;
     font-size: 28px; /* 모바일에서 크기 축소 */
     text-align: left; /* 가운데 정렬 */
     margin-bottom: 20px; /* 제목과 타임라인 간 여백 조정 */

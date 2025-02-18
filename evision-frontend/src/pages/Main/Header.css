@@ -12,8 +12,8 @@
   );
   padding: 15px 0;
   color: white;
-  position: fixed;
-  width: 99%;
+  position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -89,8 +89,10 @@
   cursor: pointer;
 }
 
+
 .nav-toggle img {
-  height: 30px;
+  height: 27px;
+  width: 30px;
 }
 
 /* 모바일 화면 대응 */
@@ -149,9 +151,7 @@
 
   .nav-toggle img {
     height: 24px;
-    width: 30px;
-    margin-bottom: 30px;
-    padding-bottom: 5px;
+    width: 24px;
   }
 
   .nav-btn {

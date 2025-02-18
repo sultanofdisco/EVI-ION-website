@@ -30,16 +30,41 @@ input::placeholder {
 }
 
 
-button {
+.login-container {
   margin-top: 20px;
   padding: 8px 13px;
-  background-color: #109734;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 8px;
 }
 
-button:hover {
+.login-button {
+  background: linear-gradient(135deg, #1d903e, #145214); /* 그라데이션 효과 */
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px; /* 둥근 버튼 */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 70px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #145214, #1d903e); /* 반대 방향 그라데이션 */
+  transform: scale(1.05); /* 살짝 커지는 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:active {
+  transform: scale(0.98); /* 버튼을 누르면 약간 줄어드는 효과 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button.login-container:hover {
   background-color: #004f27;
 }
