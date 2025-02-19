@@ -13,23 +13,22 @@ import recruitingRoutes from "./routes/recruiting.js";
 import authRoutes from "./routes/auth.js";
 
 const app = express();
+const cors = require("cors");
 
 
 // ✅ CORS 설정(쿠키 포함)
-//app.use(
-//  cors({
-//    origin: [
-//      "http://localhost:5173",
-//      "http://evision-web.com", // 🔥 배포된 실제 도메인 추가
-//      "http://evision-web.com.s3-website.ap-northeast-2.amazonaws.com",
-//   ],
-//    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//    credentials: true, // ✅ 쿠키 포함 허용
-//    allowedHeaders: ["Content-Type", "Authorization", "Accept", "X-Requested-With"],
-//  })
-//);
-
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://evision-web.com", // 🔥 배포된 실제 도메인 추가
+      "http://evision-web.com.s3-website.ap-northeast-2.amazonaws.com",
+   ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, // ✅ 쿠키 포함 허용
+    allowedHeaders: ["Content-Type", "Authorization", "Accept", "X-Requested-With"],
+  })
+);
 
 
 
