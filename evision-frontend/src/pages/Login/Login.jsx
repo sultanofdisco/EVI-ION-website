@@ -18,11 +18,11 @@ const Login = () => {
     }
 
     console.log("📨 로그인 요청 이메일:", email);
-    console.log("🌐 API 요청 URL:", `${API_URL}/auth/login`);  // ✅ API URL 출력 확인
+    console.log("🌐 API 요청 URL:", `${API_URL}/login`);  // ✅ API URL 출력 확인
 
     try {
       const response = await axios.post(
-        `${API_URL}/auth/login`,
+        `${API_URL}/login`,
         { email, password },
         {
           headers: { "Content-Type": "application/json" },  // ✅ 명시적 Content-Type 추가
