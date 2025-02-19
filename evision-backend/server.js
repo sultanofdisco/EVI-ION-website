@@ -1,8 +1,7 @@
-import "dotenv/config"; // 환경 변수 로드
+import "dotenv/config"; // ✅ 환경 변수 로드
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import path from "path";
 
 // 🔹 기존 `require()` 방식이 아닌 `import` 방식 사용
 import applyRoutes from "./routes/apply.js";
@@ -25,11 +24,17 @@ app.use(
     origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true, // ✅ 쿠키 허용
-    allowedHeaders: ["Content-Type", "Authorization", "Accept", "X-Requested-With"],
+    allowedHeaders: ["Content-Type", "Authorization", "Accept"],
   })
 );
 
 app.options("*", cors()); // Preflight 요청 처리
+
+// ✅ 요청 확인용 미들웨어
+app.use((req, res, next) => {
+  console.log(`📩 [${req.method}] 요청 수신: ${req.url}`);
+  next();
+});
 
 // ✅ 미들웨어 설정
 app.use(express.json());
@@ -37,7 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ✅ 라우트 추가
-app.use("/login", authRoutes);
+app.use("/", authRoutes); // ✅ authRoutes가 `/login`을 처리하도록 수정
 app.use("/apply", applyRoutes);
 app.use("/admin", adminRoutes);
 app.use("/recruiting", recruitingRoutes);
@@ -51,10 +56,6 @@ app.use((err, req, res, next) => {
 
 // ✅ 서버 실행
 const PORT = process.env.PORT || 3001;
-const HOST = "0.0.0.0";
-
-app.listen(PORT, HOST, () => {
-  console.log(`🚀 Server is running on:`);
-  console.log(`   🔗 Local:   http://localhost:${PORT}/`);
-  console.log(`   🌍 External: http://54.180.97.182:${PORT}/`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on: http://localhost:${PORT}/`);
 });
