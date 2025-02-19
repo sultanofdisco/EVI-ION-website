@@ -13,7 +13,6 @@ import recruitingRoutes from "./routes/recruiting.js";
 import authRoutes from "./routes/auth.js";
 
 const app = express();
-const cors = require("cors");
 
 
 // ✅ CORS 설정(쿠키 포함)
