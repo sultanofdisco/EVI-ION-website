@@ -3,7 +3,6 @@ import axios from "axios";
 import Modal from "./Modal";
 import "./admin.css";
 import { API_URL } from "../../config"; // ✅ 환경 변수에서 API URL 가져오기
-import supabase from "../../utils/supabaseClient"; // ✅ Supabase 가져오기
 
 const Admin = () => {
   const [applicants, setApplicants] = useState([]);
@@ -19,26 +18,8 @@ const Admin = () => {
   useEffect(() => {
     const fetchApplicants = async () => {
       try {
-        // ✅ Supabase 세션 가져오기
-        const { data, error } = await supabase.auth.getSession();
-
-        if (error) {
-          console.error("세션 가져오기 실패:", error.message);
-          return;
-        }
-
-        // ✅ 로그인된 사용자의 토큰 가져오기
-        const token = data?.session?.access_token;
-        if (!token) {
-          console.error("❌ 유효한 토큰이 없음 (로그인이 필요함)");
-          return;
-        }
-
         // ✅ 지원자 리스트 API 요청
         const response = await axios.get(`${API_URL}/admin`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
           withCredentials: true, // ✅ 쿠키 포함 (로그인 유지)
         });
 
@@ -91,7 +72,7 @@ const Admin = () => {
                       setModalOpen(true);
                     }}
                   >
-                    {applicant.A1 ? (applicant.A1.length > 50 ? `${applicant.A1.substring(0, 50)}...` : applicant.A1) : "내용 없음"}
+                    {applicant.A1 ? `${applicant.A1.substring(0, 50)}...` : "내용 없음"}
                   </td>
                   <td
                     className="clickable"
@@ -100,22 +81,19 @@ const Admin = () => {
                       setModalOpen(true);
                     }}
                   >
-                    {applicant.A2 ? (applicant.A2.length > 50 ? `${applicant.A2.substring(0, 50)}...` : applicant.A2) : "내용 없음"}
+                    {applicant.A2 ? `${applicant.A2.substring(0, 50)}...` : "내용 없음"}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="7" className="no-data">
-                  지원자가 없습니다.
-                </td>
+                <td colSpan="7" className="no-data">지원자가 없습니다.</td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
 
-      {/* 모달 팝업 */}
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} content={selectedAnswer} title="전체 보기" />
     </div>
   );
