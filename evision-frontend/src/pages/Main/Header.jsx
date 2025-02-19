@@ -11,11 +11,11 @@ const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isApplicationPeriod, setApplicationPeriod] = useState(true);
 
-  useEffect(() => {
-    axios.get('http://54.180.97.182:3001/admin', { key: 1234 }).then((response) => {
-      setApplicationPeriod(response.data.isApplicationPeriod === "true");
-    });
-  }, []);
+//  useEffect(() => {
+//    axios.get('http://54.180.97.182:3001/admin', { key: 1234 }).then((response) => {
+//      setApplicationPeriod(response.data.isApplicationPeriod === "true");
+//    });
+//  }, []);
 
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
