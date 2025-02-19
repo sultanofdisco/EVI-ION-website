@@ -14,7 +14,8 @@ import authRoutes from "./routes/auth.js";
 
 const app = express();
 
-// ✅ CORS 설정 (쿠키 포함)
+
+// ✅ CORS 설정(쿠키 포함)
 app.use(
   cors({
     origin: [
@@ -28,6 +29,8 @@ app.use(
   })
 );
 
+
+
 app.options("*", cors()); // Preflight 요청 처리
 
 // ✅ 미들웨어 설정
@@ -36,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ✅ 라우트 추가 (여기서 `cors()`를 직접 적용하지 않음)
-app.use("/auth", authRoutes);
+app.use("/login", authRoutes);
 app.use("/apply", applyRoutes);
 app.use("/admin", adminRoutes);
 app.use("/recruiting", recruitingRoutes);
