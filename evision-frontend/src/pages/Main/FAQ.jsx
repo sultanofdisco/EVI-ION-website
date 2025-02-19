@@ -5,7 +5,7 @@ import './FAQ.css';
 // 애니메이션 설정
 const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
 };
 
 function FAQ() {
@@ -16,7 +16,7 @@ function FAQ() {
       variants={fadeInVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       <h2>자주 묻는 질문</h2>
 

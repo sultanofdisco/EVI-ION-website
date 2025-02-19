@@ -7,6 +7,7 @@
 
 html, body {
   min-width: 360px;
+  padding-top: 80px;
   height: 100%;
   background: black;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -48,7 +49,6 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
   overflow: hidden; /* 컨테이너 내부 요소 넘칠 경우 숨기기 */
 }
 
