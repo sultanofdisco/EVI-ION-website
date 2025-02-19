@@ -1,12 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Achieve.css';
 
 const events = [
   {
     year: '2019',
-    details: [
-      'K-사이버 시큐리티 챌린지 자동차용 침입 탐지 트랙 - 3위'
-    ],
+    details: ['K-사이버 시큐리티 챌린지 자동차용 침입 탐지 트랙 - 3위'],
     position: 'right'
   },
   {
@@ -53,23 +52,43 @@ const events = [
   }
 ];
 
+// 스크롤 애니메이션 설정
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+};
+
 function Achieve() {
   return (
-    <div className="achieve-section" id="achieve">
+    <motion.div 
+      className="achieve-section" 
+      id="achieve"
+      variants={fadeInVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.1 }}
+    >
       <h2>성과 및 수상 실적</h2>
       <div className="timeline">
         {events.map((event, index) => (
-          <div key={index} className={`event ${event.position} ${event.customClass || ''}`}>
+          <motion.div 
+            key={index} 
+            className={`event ${event.position} ${event.customClass || ''}`}
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+          >
             <div className="year">{event.year}</div>
             <div className="details">
               {event.details.map((detail, idx) => (
                 <p key={idx}>{detail}</p>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
