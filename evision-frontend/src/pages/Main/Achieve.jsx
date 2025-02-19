@@ -46,6 +46,7 @@ const events = [
       'KITRI 화이트햇 스쿨 2기 수료생 2명',
       'KITRI Best Of Best(BOB) 13기 보안컨설팅 트랙 1명',
       'KITRI Best Of Best(BOB) 13기 디지털 포렌식 트랙 1명',
+      '딥페이크 가짜뉴스 대응 아이디어 공모전 우수상',
     ],
     position: 'left',
     customClass: 'custom-2024'
