@@ -3,9 +3,9 @@ import jwt from 'jsonwebtoken';
 // ✅ 로그인한 사용자 인증 (JWT 검증)
 export const authenticateUser = (req, res, next) => {
   try {
-  //  if (!req.cookies || !req.cookies.token) {
-  //    return res.status(401).json({ message: '인증이 필요합니다. (토큰 없음)' });
-  //  }
+    if (!req.cookies || !req.cookies.token) {
+      return res.status(401).json({ message: '인증이 필요합니다. (토큰 없음)' });
+    }
 
     const token = req.cookies.token;
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
