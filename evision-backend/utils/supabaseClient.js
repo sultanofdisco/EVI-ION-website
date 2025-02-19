@@ -12,7 +12,7 @@ console.log("✅ Supabase URL:", supabaseUrl);
 console.log("✅ Supabase Anon Key:", supabaseAnonKey ? "Loaded" : "Not Loaded!");
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-    auth: { persistSession: false }
+    auth: { persistSession: true }
 });
 
 export default supabase;
