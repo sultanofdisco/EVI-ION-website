@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 // ✅ Vite에서는 `import.meta.env`를 사용해야 환경 변수를 읽을 수 있음
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error("❌ Supabase 환경 변수가 제대로 로드되지 않았습니다.");
