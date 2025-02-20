@@ -55,6 +55,13 @@
   color: #ffffff; 
 }
 
+.error-message {
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: clamp(11px, 2vw, 15px);
+  color: rgba(0, 255, 76, 0.425);
+}
+
 /* 인적 사항 입력 텍스트 */
 .Form > section > input {
   align-items: center;
@@ -66,7 +73,7 @@
   background-color: #5F5F5F;
   border-radius: 12px;
   color: #ffffff;
-  font-size: clamp(13px, 2vw, 14px);
+  font-size: clamp(11px, 2vw, 15px);
   font-family:'Pretendard', sans-serif;
   font-weight: 300;
   box-sizing: border-box;
@@ -86,7 +93,7 @@
   background-color: #5F5F5F;
   border-radius: 12px;
   color: #ffffff;   /* 질문 입력시 색 변화 */
-  font-size: clamp(14px, 2vw, 15px);
+  font-size: clamp(11px, 2vw, 15px);
   font-family:'Pretendard', sans-serif;
   font-weight: 400;
   box-sizing: border-box;
@@ -95,8 +102,9 @@
 }
 
 .Form > section > ::placeholder {
+  align-items: center;
   color:rgb(173, 173, 173);
-  font-size: clamp(1px, 2vw, 15px);
+  font-size: clamp(11px, 2vw, 15px);
 }
 
 @media (max-width: 1024px) {
