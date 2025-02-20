@@ -3,10 +3,10 @@ run-name: Running
 on:
   push:
     branches:
-      - sungmin
+      - main
 env:
   AWS_REGION: ap-northeast-2
-  AWS_S3_BUCKET: moim-image
+  AWS_S3_BUCKET: evision-web.com
   AWS_CODE_DEPLOY_APPLICATION: mogether-cd
   AWS_CODE_DEPLOY_GROUP: mogether-cd-group
 
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: sungmin branch로 이동
+    - name: main branch로 이동
       uses: actions/checkout@v3
       with:
         ref: sungmin
