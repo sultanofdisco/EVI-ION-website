@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const StyledInput = styled.input`
   appearance: none;
-  width: clamp(16px, 2vw, 10px);
-  height: clamp(16px, 2vw, 10px);
+  width: clamp(16px, 2vw, 6px);
+  height: clamp(16px, 2vw, 6px);
+  margin-right: 20px; 
   border: 2px solid white;
   border-radius: 5px;
-  margin-right: 1vw;
 
     &:checked {
     border-color: transparent;
@@ -15,6 +15,10 @@ const StyledInput = styled.input`
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: white;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0px 5px;
   }
 `;
 
@@ -28,8 +32,21 @@ const StyledLabel = styled.label`
   font-weight: 400;
   font-size: clamp(18px, 2vw, 10px);
   line-height: 90%;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.2px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    padding: 15px 10px;
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 10px;
+    font-size: 13px;
+    text-align: left;
+    line-height: 1.5;
+  }
 `;
 
 function CautionCheckbox({ children, disabled, checked, onChange }) {

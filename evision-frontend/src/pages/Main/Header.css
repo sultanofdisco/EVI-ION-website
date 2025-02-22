@@ -10,13 +10,17 @@
     #123d12,   
     #145214  
   );
-  padding: 15px 0;
+  padding: 15px 10px;
   color: white;
   position: fixed;
-  width: 99%;
+  width: 100vw;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 30;
+}
+
+body {
+  padding-top: 80px; 
 }
 
 .nav-container {
@@ -89,8 +93,10 @@
   cursor: pointer;
 }
 
+
 .nav-toggle img {
-  height: 30px;
+  height: 27px;
+  width: 30px;
 }
 
 /* 모바일 화면 대응 */
@@ -114,4 +120,52 @@
   .nav-toggle {
     display: block;
   }
+
+
+  /* 480px 이하 모바일 화면 대응 */
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .nav-container{
+    padding: 0 10px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu li {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-toggle img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .nav-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
 }

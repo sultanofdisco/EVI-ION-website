@@ -1,9 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './About.css';
+
+const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1.2, ease: "easeOut" } }
+};
 
 function About() {
   return (
-    <div className="about-section" id="about">
+    <motion.div 
+      className="about-section" 
+      id="about"
+      variants={fadeInVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+    >
       <h2>동아리 소개</h2>
       <p>&quot;Ewha’s Vision, Cyber’s Future&quot;<br /></p>
       <p>
@@ -23,7 +36,7 @@ function About() {
       <a href="https://www.instagram.com/evision_security?igsh=OTVzYXJxbnlod2Vt" target="_blank" className="instagram-link">
         EVI$ION 인스타그램 보러가기 &gt;&gt;
       </a>
-    </div>
+    </motion.div>
   );
 }
 

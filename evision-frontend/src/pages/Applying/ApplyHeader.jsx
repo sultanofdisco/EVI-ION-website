@@ -6,7 +6,7 @@ import littlekey from "../../assets/logo.png";
 const ApplyHeader = () => {
   return (
     <div className="apply-header-container">
-      <Link to="/" className="lk">
+      <Link to="/" className="lk2">
         <img src={littlekey} alt="Little Key Logo" className="apply-logo" />
       </Link>
     </div>

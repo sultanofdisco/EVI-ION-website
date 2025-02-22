@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173, // ✅ 프론트엔드 실행 포트
     proxy: {
       "/api": {
-        target: "http://localhost:3001", // ✅ 백엔드 주소
+        target: "http://54.180.97.182:3001", // ✅ 백엔드 주소
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""), // ✅ 경로 재작성

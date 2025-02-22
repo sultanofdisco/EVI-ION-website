@@ -94,3 +94,56 @@
 .activity-box:hover .overlay {
   opacity: 1;
 }
+
+@media (max-width: 480px) {
+  .activity-section {
+    padding: 340px 10px;
+    margin: -200px auto 0 auto; /* 위쪽 간격 줄이기 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
+
+  .activity-section h2 {
+    font-size: 28px; /* 제목 크기 줄이기 */
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 18px;
+  }
+
+  .activity-section p {
+    font-size: 12px; /* 본문 크기 줄이기 */
+    margin-bottom: 20px;
+  }
+
+  /* 1열로 변경 */
+  .activity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 박스 간 간격 줄이기 */
+    align-items: center;
+    margin: 30px auto;
+  }
+
+  /* 박스 크기 조정 */
+  .activity-box {
+    width: 90%;
+    max-width: 320px;
+    height: 280px;
+    border-radius: 15px;
+  }
+
+  .activity-box img {
+    border-radius: 15px;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .overlay h3 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+}

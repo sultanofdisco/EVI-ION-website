@@ -36,3 +36,28 @@
   color: black;
   transform: scale(1.05);
 }
+
+@media (max-width: 480px) {
+  .re-header-container {
+    width: 10%;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    transform: translateX(0); /* 모바일에서는 X축 이동 없애기 */
+    padding: 0px 0; /* 위아래 여백 추가 */
+    margin-right: 80px;
+  }
+
+  .re-logo {
+    height: 90px; /* 로고 크기 줄이기 */
+    transform: rotate(-35.51deg) scale(0.6);
+    margin-top: -10px;
+    padding-right: 170px;
+    margin-left: -230px;
+  }
+
+  .main-btn1 {
+    padding: 6px 12px; /* 버튼 크기 줄이기 */
+    font-size: 14px; /* 글자 크기 줄이기 */
+    border-radius: 15px;
+  }
+}

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"; // API 요청을 위해 axios 사용
 
 const StyledButton = styled.button`
-    margin: 0 auto;
+    margin: 30px auto;
     border: 2px solid ${({ disabled }) => (disabled ? "rgba(255, 255, 255, 0.2)" : "rgba(255, 255, 255, 0.8)")};
     background: ${({ disabled }) =>
         disabled
@@ -13,17 +13,16 @@ const StyledButton = styled.button`
     color: ${({ disabled }) => (disabled ? "rgba(255, 255, 255, 0.3)" : "white")};
     outline: none;
     border-radius: 43px;
-    padding: 1vw 2vw;
+    padding: 10px 20px;
     cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(100px, 20vw, 250px);
+    width: clamp(100px, 20vw, 150px);
     min-height: 40px;
     white-space: nowrap;
 
     font-family: "Pretendard", sans-serif;
-    letter-spacing: 0.5vw;
     font-size: clamp(14px, 2vw, 18px);
     font-weight: 700;
 
@@ -36,6 +35,20 @@ const StyledButton = styled.button`
         transform: ${({ disabled }) => (disabled ? "none" : "scale(1.1)")};
         border-color: ${({ disabled }) => (disabled ? "rgba(255, 255, 255, 0.2)" : "white")};
         box-shadow: ${({ disabled }) => (disabled ? "none" : "0 6px 20px rgba(255, 255, 255, 0.4)")};
+    }
+
+    @media (max-width: 768px) {
+        width: clamp(90px, 40vw, 120px); /* 더 작은 화면에서 자동 조정 */
+        padding: 10px 15px;
+        font-size: clamp(12px, 4vw, 15px);
+        letter-spacing: 0.3vw;
+    }
+
+    @media (max-width: 480px) {
+        width: clamp(100px, 40vw, 110px);
+        padding: 8px 20px;
+        font-size: 13px;
+
     }
 `;
 
