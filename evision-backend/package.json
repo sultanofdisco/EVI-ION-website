@@ -3,14 +3,32 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"Test 실행됨\"",
-  "start": "node server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
-  }
+    "@prisma/client": "^5.4.2",
+    "@supabase/supabase-js": "^2.48.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "is-uuid": "^1.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^5.4.2",
+    "superstruct": "^1.0.3"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0",
+    "nodemon": "^3.0.1",
+    "vitest": "^3.0.6"
+  },
+  "type": "module"
 }

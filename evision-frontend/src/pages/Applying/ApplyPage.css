@@ -1,0 +1,60 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Pretendard', sans-serif;
+  color: white;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  width: 80vw;
+  height: 100%;
+  background: linear-gradient(179.3deg, #000000 5.83%, #000000 20.47%, #214D21 75.18%, #255B41 99.52%);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  margin: 0 auto;
+  /*padding: 20px auto;*/
+  box-sizing: border-box;
+  overflow: hidden; 
+  gap: 100px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border-radius: 12px;
+  padding: 50px;
+  margin-bottom: 20px auto;
+  box-sizing: border-box;
+  gap: 100px;
+  overflow-x: hidden;
+  overflow-y: hidden; 
+}
+
+.Header {
+  margin-left: 100px;
+  align-self: flex-start;
+  width: 100vw;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.ApplyForm {
+  width: 90vw;
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 8px;
+}

@@ -1,29 +1,6 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-
-a{
-  text-decoration: none;                     /* 기본적으로 들어가는 텍스트 데코 */
-  color: white;
-}
-
-.header_logo,
-.menu{
-  flex: 1;
+.nav-bar {
   display: flex;
-}
-
-.header {
-  top:0;
-  left: 0;
-  width: 98.9%;
-  height: 14%;
-  padding: 0;
-  display: flex;                             /* 일렬로 배열 */
-  flex-wrap:nowrap;
-  justify-content: space-between;            /* 적당한 간격 */
-  align-items: center;                       /* 메뉴바 일렬로 배열 */
+  justify-content: center; /* 중앙 정렬 */
   background: linear-gradient(
     to top,
     #000000,      
@@ -32,127 +9,163 @@ a{
     #0f3010, 
     #123d12,   
     #145214  
-  );               /* 배경 색 */
-  position: fixed;
-  z-index: 100;
-}
-
-/* 로고 이미지와 텍스트의 공통 속성 */
-.header_logo {
-  display: flex;
+  );
+  padding: 15px 10px;
   color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+body {
+  padding-top: 80px; 
+}
+
+.nav-container {
+  display: flex;
   align-items: center;
-  padding-top: 0%;                            /* 메뉴바와 높이를 맟추기 위한 패딩 */
-  margin-left: 25px;
+  justify-content: space-between;
+  max-width: 1200px; /* 중앙에 정렬할 최대 너비 */
+  width: 100%;
+  padding: 0 20px; /* 좌우 여백 추가 */
 }
 
-/* 로고 이미지 속성 */
-.logo {
-  height: 54px;                               /* 로고 이미지의 크기 조절 */
-  object-fit: contain;
-  transform: rotate(-35.51deg) scale(0.85);   /* 기존 transform 제거 */
+.nav-logo {
+  display: flex;
+  align-items: center; /* 로고와 텍스트 수직 정렬 */
+  gap: 10px; /* 로고와 텍스트 사이 간격 */
+  text-decoration: none;
 }
 
-/* 로고 텍스트 속성 */
 .logo-text {
-  font-size: 28px;
-  font-family: "Krona One", sans-serif;
+  font-size: 22px;
   font-weight: bold;
+  color: white;
+  font-family: "Krona One", sans-serif;
   letter-spacing: 2px;
 }
 
-.menu {
+.nav-logo img {
+  height: 50px;
+  transform: rotate(-35.51deg) scale(0.8);
+}
+
+.nav-menu {
   display: flex;
+  gap: 20px;
   list-style: none;
-  padding: 0 6px;
+  font-size: 16px;
+  color: rgb(204, 204, 204);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-.menu ul {
-  display: flex;
-  align-items: center;    
-  margin-top: 0%;                              /* 로고와 높이를 맞추기 위한 패딩 */
-}
-
-.menu ul li {
-  display: flex;
-  margin: 0 20px;                              /* 메뉴 선택지끼리의 패딩 */
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.menu ul li a {
-  text-decoration: none;        
-}
-
-/* 텍스트에 커서를 올렸을 때 */
-.menu ul li a:hover {
-  color: #349e40;
-}
-
-.recruiting-wrapper {
-  display: flex;
-  align-items: center;   
-  height: 40px;            
-}
-
-.recruiting-btn {
-  display: flex;
-  align-items: center;        
-  justify-content: center;
-  padding: 8px 20px;
-  border: 2px solid white;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+.nav-menu li {
   cursor: pointer;
-  height: 40px;              
-  box-sizing: border-box;
-  line-height: 1;           
+  transition: 0.3s;
 }
 
-.recruiting-btn:hover {
-  background-color: #349e40;
+.nav-menu li:hover {
+  color: #1d903e;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;;
+  color: white;
+  padding: 6px 16px;
+  font-weight: 550;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: white;
   color: black;
-  border-color: #349e40;
 }
 
-.hamburger {
-  display: none;            /* 기본적으로 최대화일 때는 안보이도록 */
-  font-size: 24px;
+.nav-toggle {
+  display: none;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
-  margin-right: 20px;
 }
 
-/* 반응형 스타일 (1530px 이하) -> 거의 그냥 최소화가 되는 순간 바로 햄버거 버튼*/
-@media (max-width: 1530px) {
-  .menu {
-    display: none;            /* 메뉴 숨기기 */
-  }
 
-  .hamburger {
-    display: block;           /* 화면이 최소화되면 햄버거버튼 보이게 */
-  }
+.nav-toggle img {
+  height: 27px;
+  width: 30px;
+}
 
-  .menu.open {
-    display: flex;
-    flex-direction: column;   /* 메뉴들을 colume으로 배치 */
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background: #0a1e0a;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .menu.open ul {
+/* 모바일 화면 대응 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
     flex-direction: column;
-    align-items: center;      /* 메뉴들은 중앙정렬 */
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
   }
 
-  .menu.open ul li {
-    margin: 10px 0;
+  .nav-menu.open {
+    display: flex;
   }
+
+  .nav-toggle {
+    display: block;
+  }
+
+
+  /* 480px 이하 모바일 화면 대응 */
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .nav-container{
+    padding: 0 10px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu li {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-toggle img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .nav-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
 }

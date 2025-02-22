@@ -1,0 +1,52 @@
+.apply-header-container {
+  margin: -300px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  padding: 300px 0;
+  transform-origin: top left;
+  transform: scale(calc(100vw / 1920));
+}
+
+.apply-logo {/* 부모 요소를 기준으로 고정 */
+  position: relative;
+  transform: rotate(-35.51deg) scale(0.75);
+  height: clamp(50px, 8vw, 80px);
+}
+
+.main-btn {
+  z-index: 99999;
+  position : fixded;
+  font-family: "Pretendard", sans-serif;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 20px 20px; /* 버튼 크기 조정 */
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-right: -100px;
+  white-space: nowrap;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.main-btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+.lk2 {
+  margin-top: 30px;
+  display: flex;
+}

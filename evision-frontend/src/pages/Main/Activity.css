@@ -3,38 +3,147 @@
   padding: 50px 0px;
   font-family: "Krona One", sans-serif;
   max-width: 1500px;
-  margin: -430px auto 0 auto; /* margin-left 제거 */
+  margin: -430px auto 0 auto;
   text-align: left;
 }
 
 .activity-section h2 {
-  font-size: 40px;
+  font-size: 37px;
   font-weight: bold;
+  margin-bottom: 30px; /* 제목과 세부 내용 간격 조정 */
+}
+
+/* 세부 설명 스타일 추가 */
+.activity-section p {
+  font-size: 20px;
+  color: #d0d0d0;
   margin-bottom: 30px;
+  font-weight: 400;
 }
 
 /* 2x2 박스 정렬을 위한 grid 레이아웃 */
 .activity-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 90px;
+  gap: 100px;
   justify-content: center;
   align-items: center;
   margin: 65px auto;
+
 }
 
 .activity-box {
-  width: 400px;
+  position: relative;
+  width: 440px;
   height: 380px;
   background-color: #d9d9d9;
   border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* 부드럽게 움직이도록 */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 뭔가 박스가 강조되는 느낌을 주고 싶음 */
 .activity-box:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.activity-box img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 20px; 
+  transition: 0.3s ease-in-out;
+}
+
+.activity-box:hover img {
+  filter: brightness(50%);
+}
+
+/* 설명 오버레이 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column; /* 제목 + 세부 설명 정렬 */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px; /* 내부 여백 추가 */
+}
+
+.overlay h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 16px;
+  color: #e0e0e0;
+  max-width: 90%;
+}
+
+/* 마우스를 올리면 설명이 나타남 */
+.activity-box:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .activity-section {
+    padding: 340px 10px;
+    margin: -200px auto 0 auto; /* 위쪽 간격 줄이기 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
+
+  .activity-section h2 {
+    font-size: 28px; /* 제목 크기 줄이기 */
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 18px;
+  }
+
+  .activity-section p {
+    font-size: 12px; /* 본문 크기 줄이기 */
+    margin-bottom: 20px;
+  }
+
+  /* 1열로 변경 */
+  .activity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 박스 간 간격 줄이기 */
+    align-items: center;
+    margin: 30px auto;
+  }
+
+  /* 박스 크기 조정 */
+  .activity-box {
+    width: 90%;
+    max-width: 320px;
+    height: 280px;
+    border-radius: 15px;
+  }
+
+  .activity-box img {
+    border-radius: 15px;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .overlay h3 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
 }

@@ -1,0 +1,70 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+.login-container h1{
+  padding-bottom: 13px;
+  color : white;
+}
+
+input {
+  margin: 10px;
+  padding: 8px;
+  width: 220px;
+  background-color: #707070; /* 연한 회색 */
+  color: white; /* 글씨 색상 흰색 */
+  border: 1px solid #a9a9a9; /* 경계를 더 부드럽게 */
+  border-radius: 5px; /* 모서리를 약간 둥글게 */
+  font-family: "Pretendard Variable"
+}
+
+input::placeholder {
+  color: #f0f0f0; /* 플레이스홀더 글씨 색상 (더 연한 흰색) */
+  font-size: 12px;
+  font-family: "Pretendard Variable"
+}
+
+
+.login-container {
+  margin-top: 20px;
+  padding: 8px 13px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.login-button {
+  background: linear-gradient(135deg, #1d903e, #145214); /* 그라데이션 효과 */
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px; /* 둥근 버튼 */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 70px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #145214, #1d903e); /* 반대 방향 그라데이션 */
+  transform: scale(1.05); /* 살짝 커지는 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:active {
+  transform: scale(0.98); /* 버튼을 누르면 약간 줄어드는 효과 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button.login-container:hover {
+  background-color: #004f27;
+}

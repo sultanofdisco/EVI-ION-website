@@ -1,39 +1,59 @@
-import React, { useState } from 'react';
-import logo from '../assets/logo.png'; 
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import "./Header.css";
+import logo from "../../assets/logo.png";
+import hamburgerBar from "../../assets/hamburgerBar.png";
 
-// 홈페이지를 새로 고침
-function Header() {
+const Header = () => {
+  const navigate = useNavigate();
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isApplicationPeriod, setApplicationPeriod] = useState(true);
 
-  const [isOpen, setIsOpen] = useState(false);
+//  useEffect(() => {
+//    axios.get('http://54.180.97.182:3001/admin', { key: 1234 }).then((response) => {
+//      setApplicationPeriod(response.data.isApplicationPeriod === "true");
+//    });
+//  }, []);
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();         // 기본 동작(페이지 이동) 막기
-    window.location.reload();   // 페이지 새로고침
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="header">
-      <div className="header_logo">
-        <img className="logo" src={logo} alt="EVISION 로고" />
-        <a href="#" className="logo-text" onClick={handleLogoClick}>EVI$ION</a>
-      </div>
-      
-      {/* 햄버거 버튼 */}
-      <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>☰</button>
+    <nav className="nav-bar">
+      <div className="nav-container">
+        <Link to="/" className="nav-logo">
+          <img src={logo} alt="Logo" />
+          <span className="logo-text">EVI$ION</span>
+        </Link>
 
-      {/* 메뉴 */}
-      <nav className={`menu ${isOpen ? "open" : ""}`}>
-        <ul>
-          <li><a href="#" className="recruiting-wrapper"><span className="recruiting-btn">Recruiting</span></a></li>
-          <li><a href="#about">동아리 소개</a></li> 
-          <li><a href="#achieve">성과 및 수상실적</a></li>
-          <li><a href="#activity">주요활동</a></li>
-          <li><a href="#faq">자주 묻는 질문</a></li>
+        <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
+          <li>
+            <Link to={isApplicationPeriod ? "/recruiting" : "/register/notperiod"} className="nav-btn">
+              Recruiting
+            </Link>
+          </li>
+          <li onClick={() => scrollToSection("about")}>동아리 소개</li>
+          <li onClick={() => scrollToSection("achieve")}>수상 실적 및 기록</li>
+          <li onClick={() => scrollToSection("activity")}>활동 기록</li>
+          <li onClick={() => scrollToSection("faq")}>자주 묻는 질문</li>
+          <li onClick={() => navigate("/login")}>로그인</li>
         </ul>
-      </nav>
-    </div>
+
+        <button className="nav-toggle" onClick={toggleMenu}>
+          <img
+            src={hamburgerBar}
+            alt="Toggle Menu"
+          />
+        </button>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Header;

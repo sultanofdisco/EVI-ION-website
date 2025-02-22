@@ -1,0 +1,176 @@
+.header-container {
+  display: grid; 
+  grid-template-rows: repeat(4, 60px);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "lk . . . . . . rec ."
+    "ev . . . . . . bk bk"
+    "li li li li li li li li ."
+    "li li li li li li li li .";
+  gap: 60px;
+  margin: 0 auto;
+  width: 1400px; /* 너비를 px 단위로 고정 */
+  min-width: 360px;
+  max-width: 100%;
+  transform: translateX(80px) translateY(-70px);
+  position: relative;
+  pointer-events: none;
+}
+
+.lk {
+  grid-area: lk;
+  margin-top: 30px;
+}
+
+.rec {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: rec;
+  padding-top: 60px;
+}
+
+.ev {
+  grid-area: ev;
+}
+
+.bk {
+  justify-self: end;
+  grid-area: bk;
+}
+
+.li {
+  grid-area: li;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.biglogo {
+  width: 350px;
+  position: absolute;
+  margin-top: 20px;
+  margin-right: 100px;
+  transform: translateX(-500px) translateY(-50px) rotate(-8.74deg) scale(0.7);
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  .biglogo {
+    display: none; /* 특정 크기 이하에서 완전히 숨김 */
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-resolution: 1.5dppx) {
+  .biglogo {
+    display: none;
+  }
+}
+
+
+.main-btn {
+  z-index: 100;
+  font-family: "Pretendard", sans-serif;
+  background-color: rgba(255, 255, 255, 0.1); /* 약간 투명한 배경 */
+  border: 2px solid white; /* 흰색 테두리 */
+  color: white;
+  padding: 6px 20px; /* 버튼 크기 조정 */
+  font-size: 19px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  position: fixed; /* 화면 크기 변화에 영향을 받지 않도록 고정 */
+  bottom: 20px;
+  right: 20px;
+}
+
+.main-btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05); /* 살짝 커지는 효과 */
+}
+
+.h1 {
+  font-size: 54px;
+  padding-top: -5px;
+  color: white;
+  font-family: "Krona One", sans-serif;
+  display: inline; /* 블록 요소가 아니라 인라인 요소로 변경 */
+  white-space: nowrap; 
+}
+
+.h2 {
+  font-size: 24px;
+  color: gray;
+  font-weight: 600;
+  line-height: 1.7;
+  font-family: "Pretendard", sans-serif;
+  transform: translateY(-30px);
+}
+
+hr {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(40px);
+  width: 80vw; /* 화면 너비의 80%로 설정 */
+  max-width: 1200px; /* 최대 길이 제한 */
+  height: 1px;
+  background-color: rgb(190, 190, 190);
+}
+
+@media screen and (max-width: 480px) {
+  .header-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* 요소 간 간격 조정 */
+    width: 100%; /* 너비를 100%로 설정 */
+    transform: none; /* 위치 조정 제거 */
+    padding-bottom: 140px;
+  }
+
+  .lk, .rec, .ev, .bk {
+    margin: 0;
+    text-align: center; /* 요소 중앙 정렬 */
+  }
+
+  .biglogo {
+    display: none; /* 모바일에서는 숨김 */
+  }
+
+  .h1 {
+    font-size: 36px; /* 제목 크기 조정 */
+    text-align: left;
+    padding-top: 40px;
+    margin-bottom: -30px;
+  }
+
+  .h2 {
+    font-size: 17px; /* 부제목 크기 축소 */
+    text-align: left;
+    transform: none;
+    padding-bottom: 1px;
+  }
+
+  .main-btn {
+    font-size: 16px; /* 버튼 글씨 크기 조정 */
+    padding: 8px 16px;
+    bottom: 10px; /* 버튼 위치 조정 */
+    right: 10px;
+  }
+
+  hr {
+    width: 90%; /* 가로선 너비 조정 */
+    transform: none;
+  }
+
+  hr {
+    transform: translateY(30px); /* 모바일에서 선을 더 아래로 */
+    margin-left: 13px;
+  }
+}

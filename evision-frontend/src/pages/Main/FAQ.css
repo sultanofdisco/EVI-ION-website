@@ -8,42 +8,103 @@
 }
 
 .faq-section h2 {
-  font-size: 40px;
+  font-size: 37px;
   font-weight: bold;
   font-family: "Krona One", sans-serif;
   margin-bottom: 60px;
   text-align: right;
-  margin-right: 7px;
+  margin-right: 0px;
 }
 
 .faq-item {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 30px;
-  width: 1060px;
+  width: 1000px;
   margin-bottom: 30px;
   text-align: left;
 }
 
 .faq-item h3 {
-  font-size: 24px;
-  color: white;
+  font-size: 21px;
+  color: #d9d9d9;
   margin-bottom: 10px;
 }
 
 .faq-item p {
-  font-size: 18px;
-  color: white;
+  font-size: 16px;
+  color: rgb(165, 165, 165);
   line-height: 1.8;
 }
 
 .faq-note {
   font-size: 16px;
-  color: #a1d19e;
+  color: #177223;
   margin-top: 20px;
 }
 
 .call {
-padding-top: 10%;
+padding-top: 20%;
 line-height: 1.8;
+}
+.call pre{
+  font-size: 16px;
+  font-family:'Pretendard', sans-serif;
+  line-height: 2;
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 0px 15px; /* 좌우 여백 줄이기 */
+    margin: -200px auto 0 auto; /* 위쪽 마진 조정 */
+    text-align: left; /* 텍스트 중앙 정렬 */
+  }
+
+  .faq-section h2 {
+    font-size: 28px; /* 제목 크기 줄이기 */
+    margin-bottom: 40px;
+    text-align: left; /* 모바일에서 중앙 정렬 */
+    margin-left: 3px;
+  }
+
+  .faq-item {
+    width: 100%; /* 전체 너비 */
+    max-width: 320px;
+    padding: 20px;
+    margin: 0 auto 4ch auto; /* 가운데 정렬 & 간격 조정 */
+    text-align: left;
+  }
+
+  .faq-item h3 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .faq-item p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .faq-note {
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .call {
+    padding-top: 10%;
+    line-height: 1.6;
+    padding-bottom: 70px;
+  }
+
+  .call h4 {
+    font-size: 17px;
+    padding-bottom: 10px;
+  }
+
+  .call pre {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  
 }

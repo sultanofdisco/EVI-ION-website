@@ -7,14 +7,14 @@
 
 html, body {
   min-width: 360px;
+  padding-top: 80px;
   height: 100%;
   background: black;
-  font-family: 'Pretendard', sans-serif;
-  overflow-y: auto;
-  overflow-x: auto;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  overflow: unset
 }
 
-.container {
+/*.container {
   width: 100%;
   min-width: 360px;
   min-height: 6000px;
@@ -35,8 +35,39 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+}*/
+
+.container {
+  width: 100%;
+  min-width: 360px;
+  min-height: 6000px;
+  background: black;  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* 컨테이너 내부 요소 넘칠 경우 숨기기 */
 }
 
 #about, #achieve, #activity, #faq {
   scroll-margin-top: 100px; /* 100px만큼 위쪽 여백 추가 */
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    min-height: auto !important; /* 모바일에서만 자동 조정 */
+  }
+
+  .faq-section {
+    margin-bottom: 0px; /* 마지막 섹션 아래 여백 제거 */
+    padding-bottom: 30px; /* 적당한 여백만 유지 */
+  }
+
+  body {
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    overflow-y: auto; /* 세로 스크롤 자동 조정 */
+  }
 }
